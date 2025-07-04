@@ -1,2 +1,2 @@
-# acorpe.github.io
-hexo static
+# www-blog
+hexo www-blog
