@@ -12,6 +12,12 @@
     
     
     
+    <tags>
+      
+      <tag>学习</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -24,6 +30,12 @@
     <content type="html"><![CDATA[<p>NAS存储不够了，因此对其进行了扩容，好多插件都要重新安装，记录下Tailscale安装过程，其他插件直接修复就安装完毕了</p><h2 id="安装包下载"><a href="#安装包下载" class="headerlink" title="安装包下载"></a>安装包下载</h2><p>Tailscale按照说明套件中心应该存在，但是实际没找到，网上找到了下载地址，下载架构对应的版本即可。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">https://pkgs.tailscale.com/stable/#spks<br></code></pre></td></tr></table></figure><h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p>进入群晖套件中心–&gt;所有套件 右上角部分有个手动安装，安装后即可</p><h2 id="登录Tailscale"><a href="#登录Tailscale" class="headerlink" title="登录Tailscale"></a>登录Tailscale</h2><p>安装过程没任何问题，但是点击安装后图标，进行登录时报Failed Login，Google了报错原因，参考此文档解决，总结下来主要登录SSH，手动up</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">https://tailscale.com/kb/1131/synology<br></code></pre></td></tr></table></figure><p>详细步骤如下：<br>1.SSH登录Nas，涵盖开启端口、放通防火墙，putty连接等<br>2.执行以下命令，需要输入密码</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo tailscale up<br></code></pre></td></tr></table></figure><p>3.将输出地址在浏览器输入，按提示登录即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">To authenticate, visit:<br>https://login.tailscale.com/a/xxxxxxxxxx<br>Success.<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>群晖</tag>
+      
+    </tags>
     
   </entry>
   
