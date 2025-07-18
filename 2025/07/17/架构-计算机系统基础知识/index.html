@@ -19,19 +19,19 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="硬件冯诺依曼结构，整体结构可如图  控制器 运算器 存储器 输入设备 输出设备  处理器运算器和控制器是处理器的核心部件指令集：复杂指令集CISC、精简指令集RISC常见处理芯片：图形处理器GPU，信号处理器DSP，可编程逻辑门阵列FPGA等 存储存储器：用于存储数据的电子设备。按硬件接口分分：  SRAM DRAM NVRAM Flash EPROM Disk按与处理器的物理距离分： 片上缓存">
+    <meta name="description" content="硬件冯诺依曼结构，整体结构可如图  控制器 运算器 存储器 输入设备 输出设备  处理器运算器和控制器是处理器的核心部件指令集：复杂指令集CISC、精简指令集RISC常见处理芯片：图形处理器GPU，信号处理器DSP，可编程逻辑门阵列FPGA等 存储存储器：用于存储数据的电子设备。按硬件接口分分：  SRAM DRAM NVRAM Flash EPROM Disk  按与处理器的物理距离分：  片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="架构-计算机系统基础知识">
 <meta property="og:url" content="http://060800.xyz/2025/07/17/%E6%9E%B6%E6%9E%84-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="硬件冯诺依曼结构，整体结构可如图  控制器 运算器 存储器 输入设备 输出设备  处理器运算器和控制器是处理器的核心部件指令集：复杂指令集CISC、精简指令集RISC常见处理芯片：图形处理器GPU，信号处理器DSP，可编程逻辑门阵列FPGA等 存储存储器：用于存储数据的电子设备。按硬件接口分分：  SRAM DRAM NVRAM Flash EPROM Disk按与处理器的物理距离分： 片上缓存">
+<meta property="og:description" content="硬件冯诺依曼结构，整体结构可如图  控制器 运算器 存储器 输入设备 输出设备  处理器运算器和控制器是处理器的核心部件指令集：复杂指令集CISC、精简指令集RISC常见处理芯片：图形处理器GPU，信号处理器DSP，可编程逻辑门阵列FPGA等 存储存储器：用于存储数据的电子设备。按硬件接口分分：  SRAM DRAM NVRAM Flash EPROM Disk  按与处理器的物理距离分：  片">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E7%B3%BB%E7%BB%9F%E5%9B%BE.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%8C%87%E4%BB%A4%E9%9B%86.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E5%AD%98%E5%82%A8.png">
 <meta property="article:published_time" content="2025-07-17T22:08:20.000Z">
-<meta property="article:modified_time" content="2025-07-18T00:24:03.292Z">
+<meta property="article:modified_time" content="2025-07-18T00:58:36.686Z">
 <meta property="article:author" content="砖头">
 <meta property="article:tag" content="软考">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          562 字
+          1.1k 字
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
         
-          5 分钟
+          9 分钟
         
       </span>
     
@@ -332,7 +332,10 @@
 <li>NVRAM</li>
 <li>Flash</li>
 <li>EPROM</li>
-<li>Disk<br><em>按与处理器的物理距离分：</em></li>
+<li>Disk</li>
+</ul>
+<p><em>按与处理器的物理距离分：</em></p>
+<ul>
 <li>片上缓存：在处理器核心<strong>中</strong>，一般为SRAM，快速读取，容量小，16kB-512kB，可分一级或二级</li>
 <li>片外缓存：在处理器核心<strong>外</strong>，需要交换互联开关，一般SRAM，256kB-4MB，称为L2Cache或L3Cache，平台Cache</li>
 <li>主存（内存）：DRAM，独立部件&#x2F;芯片，通过<strong>总线</strong>与处理器连接。需要持续供电，数百MB-数十GB</li>
@@ -364,6 +367,33 @@
 <li>SATA接口</li>
 <li>LPT打印接口</li>
 <li>RS-232接口<br><strong>对于总线而言，一种总线可能存在多种接口</strong></li>
+</ul>
+<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><ul>
+<li>系统软件：为整个计算机系统配置的不依赖特定应用领域的通用软件，对硬件和软件资源进行控制和管理，为用户使用和其他软件运行提供服务</li>
+<li>应用软件：为某类应用需要或解决特定问题涉及的软件。如图形图像处理、财务软件、游戏软件和各种软件包等；</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>见后续</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p>见后续</p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p><strong>文件</strong>：具有符号名的，在逻辑上具有完整意义的一组相关信息的集合。是一种<strong>抽象机制</strong>，隐藏了硬件和实现细节，</p>
+<ul>
+<li>文件体：文件真实的内容</li>
+<li>文件说明：操作系统为了管理文件所用到的信息，包括文件名、文件内部表示、文件类型、存储地址、文件长度、访问权限、建立时间和访问时间等<br><strong>文件系统</strong>：实现<em>文件</em>统一管理的一组软件和相关数据的集合，专门管理和存储文件信息的软件机构。<em>功能</em> 有：按名存取、统一的用户接口、并发访问和控制、安全性控制、优化性能、差错恢复。</li>
+<li>性质和用户：系统文件、库文件、用户文件</li>
+<li>保存期限：临时文件、档案文件、永久文件</li>
+<li>保护方式：只读、读&#x2F;写、可执行、不保护</li>
+<li>UNIX：普通文件、目录文件、设备文件（特殊文件）<br><strong>文件结构</strong>：</li>
+<li>逻辑结构<ul>
+<li>有记录的记录式文件：所有的记录通常都描述一个实体集，记录的长度分定长和不定长</li>
+<li>无结构的流式文件：文件体为字节流。通常采用顺序访问方式，读写可以任意长度</li>
+</ul>
+</li>
+<li>物理结构<ul>
+<li>连续结构（顺序结构）</li>
+<li>链接结构（串联结构）</li>
+<li>索引结构</li>
+<li>多个物理块的索引表（链接文件和多重索引方式）</li>
+</ul>
+</li>
 </ul>
 
                 
