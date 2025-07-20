@@ -19,22 +19,22 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="GitHub Actions 是 GitHub 推出的持续集成服务，入门教程可参考:GitHub Actions 入门教程。 新建两个仓库_www : 私有仓库，存储源代码内容，生成文件xxx.github.io ： 公开仓库，主要存在编译后的public内容 操作步骤1.获取 GH_TOKEN首先到个人中心设置Setting-&gt;Developer Settings-&gt; Persona">
+    <meta name="description" content="NAS存储不够了，因此对其进行了扩容，好多插件都要重新安装，记录下Tailscale安装过程，其他插件直接修复就安装完毕了 安装包下载Tailscale按照说明套件中心应该存在，但是实际没找到，网上找到了下载地址，下载架构对应的版本即可。 1https:&#x2F;&#x2F;pkgs.tailscale.com&#x2F;stable&#x2F;#spks  手动安装进入群晖套件中心–&gt;所有套件 右上角部分有个手动安装，安装后即">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github Pages搭建Hexo博客">
-<meta property="og:url" content="http://060800.xyz/2025/07/04/Github%20Pages%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="群晖安装Tailscale">
+<meta property="og:url" content="http://060800.xyz/2025/07/09/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%B3%85/%E7%BE%A4%E6%99%96%E5%AE%89%E8%A3%85Tailscale/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="GitHub Actions 是 GitHub 推出的持续集成服务，入门教程可参考:GitHub Actions 入门教程。 新建两个仓库_www : 私有仓库，存储源代码内容，生成文件xxx.github.io ： 公开仓库，主要存在编译后的public内容 操作步骤1.获取 GH_TOKEN首先到个人中心设置Setting-&gt;Developer Settings-&gt; Persona">
+<meta property="og:description" content="NAS存储不够了，因此对其进行了扩容，好多插件都要重新安装，记录下Tailscale安装过程，其他插件直接修复就安装完毕了 安装包下载Tailscale按照说明套件中心应该存在，但是实际没找到，网上找到了下载地址，下载架构对应的版本即可。 1https:&#x2F;&#x2F;pkgs.tailscale.com&#x2F;stable&#x2F;#spks  手动安装进入群晖套件中心–&gt;所有套件 右上角部分有个手动安装，安装后即">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-04T14:31:11.000Z">
-<meta property="article:modified_time" content="2025-07-20T06:25:55.272Z">
+<meta property="article:published_time" content="2025-07-09T06:15:02.000Z">
+<meta property="article:modified_time" content="2025-07-20T06:35:10.693Z">
 <meta property="article:author" content="砖头">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="群晖">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Github Pages搭建Hexo博客 - 搬砖者</title>
+  <title>群晖安装Tailscale - 搬砖者</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +225,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Github Pages搭建Hexo博客"></span>
+            <span id="subtitle" data-typed-text="群晖安装Tailscale"></span>
           
         </div>
 
@@ -236,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-04 14:31" pubdate>
-          2025年7月4日 下午
+        <time datetime="2025-07-09 06:15" pubdate>
+          2025年7月9日 早上
         </time>
       </span>
     
@@ -248,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          320 字
+          253 字
         
       </span>
     
@@ -305,19 +305,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Github Pages搭建Hexo博客</h1>
+            <h1 id="seo-header">群晖安装Tailscale</h1>
             
             
               <div class="markdown-body">
                 
-                <p>GitHub Actions 是 GitHub 推出的持续集成服务，入门教程可参考:GitHub Actions 入门教程。</p>
-<h2 id="新建两个仓库"><a href="#新建两个仓库" class="headerlink" title="新建两个仓库"></a>新建两个仓库</h2><p>_www : 私有仓库，存储源代码内容，生成文件<br>xxx.github.io ： 公开仓库，主要存在编译后的public内容</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>1.获取 GH_TOKEN<br>首先到个人中心设置Setting-&gt;Developer Settings-&gt; Personal access tokens-&gt;tokens (classic)，新建一个token即可。<br>token 能让 GitHub Actions 构建所在的虚拟系统对发布仓库拥有权限可以进行推送操作。</p>
-<p>2.设置 Actions Secrets<br>新建 _www 仓库，将本地目录的 hexo 源码推送到_www 仓库里，然后进到 _www 仓库的 Setting-&gt;secrets and variables -&gt;Actions 在Repository secrets里新建一个名为[ACCESS_TOKEN]的键值项，内容填上一步获取到的 token 值。</p>
-<p>3.Actions 设置<br>在博客源码根目录下新建目录 .github&#x2F;workflows ,然后在其下新建任务文件 deploy.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Publish</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">to</span> <span class="hljs-string">gitpage</span><br><span class="hljs-attr">on:</span><br><span class="hljs-attr">push:</span><br>  <span class="hljs-attr">branches:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">main</span>  <span class="hljs-comment"># 如果源码与gitpage用同一仓库则修改为hexo源码对应分支</span><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">ref:</span> <span class="hljs-string">main</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">dependencies</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">        npm install -g hexo-cli # 给虚拟机装上hexo运行环境</span><br><span class="hljs-string">        npm install             # 安装 package.json 中记录的所有插件</span><br><span class="hljs-string"></span>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Generate</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">site</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">        hexo clean</span><br><span class="hljs-string">        hexo generate</span><br><span class="hljs-string"></span>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">B</span> <span class="hljs-string">repo</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">personal_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.ACCESS_TOKEN</span> <span class="hljs-string">&#125;&#125;</span> <span class="hljs-comment"># Personal access token</span><br>        <span class="hljs-attr">external_repository:</span> <span class="hljs-string">xxxx/xxxx.github.io</span>  <span class="hljs-comment"># 发布的仓库地址</span><br>        <span class="hljs-attr">PUBLISH_BRANCH:</span> <span class="hljs-string">main</span><br>        <span class="hljs-attr">PUBLISH_DIR:</span> <span class="hljs-string">./public</span><br></code></pre></td></tr></table></figure>
-<p>4.至此所有的就完成了</p>
+                <p>NAS存储不够了，因此对其进行了扩容，好多插件都要重新安装，记录下Tailscale安装过程，其他插件直接修复就安装完毕了</p>
+<h2 id="安装包下载"><a href="#安装包下载" class="headerlink" title="安装包下载"></a>安装包下载</h2><p>Tailscale按照说明套件中心应该存在，但是实际没找到，网上找到了下载地址，下载架构对应的版本即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">https://pkgs.tailscale.com/stable/#spks<br></code></pre></td></tr></table></figure>
 
+<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p>进入群晖套件中心–&gt;所有套件 右上角部分有个手动安装，安装后即可</p>
+<h2 id="登录Tailscale"><a href="#登录Tailscale" class="headerlink" title="登录Tailscale"></a>登录Tailscale</h2><p>安装过程没任何问题，但是点击安装后图标，进行登录时报Failed Login，Google了报错原因，参考此文档解决，总结下来主要登录SSH，手动up</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">https://tailscale.com/kb/1131/synology<br></code></pre></td></tr></table></figure>
+<p>详细步骤如下：<br>1.SSH登录Nas，涵盖开启端口、放通防火墙，putty连接等<br>2.执行以下命令，需要输入密码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo tailscale up<br></code></pre></td></tr></table></figure>
+<p>3.将输出地址在浏览器输入，按提示登录即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">To authenticate, visit:<br>https://login.tailscale.com/a/xxxxxxxxxx<br>Success.<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -350,7 +353,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
+        <a href="/tags/%E7%BE%A4%E6%99%96/" class="print-no-link">#群晖</a>
       
     </div>
   
@@ -362,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Github Pages搭建Hexo博客</div>
-      <div>http://060800.xyz/2025/07/04/Github Pages搭建Hexo博客/</div>
+      <div>群晖安装Tailscale</div>
+      <div>http://060800.xyz/2025/07/09/技术杂糅/群晖安装Tailscale/</div>
     </div>
     <div class="license-meta">
       
@@ -375,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月4日</div>
+          <div>2025年7月9日</div>
         </div>
       
       
@@ -407,9 +410,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/09/%E7%BE%A4%E6%99%96%E5%AE%89%E8%A3%85Tailscale/" title="群晖安装Tailscale">
+                      <a href="/2025/07/09/%E5%8F%A4%E8%AF%97/" title="古诗">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">群晖安装Tailscale</span>
+                        <span class="hidden-mobile">古诗</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -417,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/17/VUE3-Canvas%E7%BB%98%E5%88%B6%E4%BA%94%E5%AD%90%E6%A3%8B%EF%BC%88%E4%BA%94%EF%BC%89/" title="VUE3+Canvas绘制五子棋（五）">
-                        <span class="hidden-mobile">VUE3+Canvas绘制五子棋（五）</span>
+                      <a href="/2025/07/04/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%B3%85/Github%20Pages%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/" title="Github Pages搭建Hexo博客">
+                        <span class="hidden-mobile">Github Pages搭建Hexo博客</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,22 +19,21 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="近期发现了几个免费的数据库，想着尝试用Flask进行简单连接 以前一直使用SQLite，近期打算尝试连接MySQL和Postgre 一些简单的安装等命令就此略过 多数据源配置12345678910111213141516171819202122232425262728# 配置SQLite数据源sqlite_path &#x3D; os.path.join(BASE_DIR, &quot;sys.db&amp;qu">
+    <meta name="description" content="开车从毕业到现在已近6年，基本没有事故甚至把别人刮擦，记得上一次事故是家里大人怀孕做坐月子期间，在五彩城拐弯去华润超市时。 回忆起来上次应该是看了右后视镜，要弯道拐弯进去，而看的过程中前车奔驰突然刹车了，导致还没进入转弯道，就撞到了，踩了紧急刹车，撞的不严重，一切按照保险来。当时认定自己追尾全责，事后回想，是否前车本来也要右转，存在压线的可能，翻看照片无法看出，因此此事也就到此结束。 22年此次车">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于falsk-sqlalchemy中多数据库配置及使用">
-<meta property="og:url" content="http://060800.xyz/2024/07/04/%E5%85%B3%E4%BA%8Efalsk-sqlalchemy%E4%B8%AD%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="记录一次车祸（回忆分析）">
+<meta property="og:url" content="http://060800.xyz/2022/03/31/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E8%BD%A6%E7%A5%B8%EF%BC%88%E5%9B%9E%E5%BF%86%E5%88%86%E6%9E%90%EF%BC%89/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="近期发现了几个免费的数据库，想着尝试用Flask进行简单连接 以前一直使用SQLite，近期打算尝试连接MySQL和Postgre 一些简单的安装等命令就此略过 多数据源配置12345678910111213141516171819202122232425262728# 配置SQLite数据源sqlite_path &#x3D; os.path.join(BASE_DIR, &quot;sys.db&amp;qu">
+<meta property="og:description" content="开车从毕业到现在已近6年，基本没有事故甚至把别人刮擦，记得上一次事故是家里大人怀孕做坐月子期间，在五彩城拐弯去华润超市时。 回忆起来上次应该是看了右后视镜，要弯道拐弯进去，而看的过程中前车奔驰突然刹车了，导致还没进入转弯道，就撞到了，踩了紧急刹车，撞的不严重，一切按照保险来。当时认定自己追尾全责，事后回想，是否前车本来也要右转，存在压线的可能，翻看照片无法看出，因此此事也就到此结束。 22年此次车">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-04T16:43:52.000Z">
-<meta property="article:modified_time" content="2025-07-20T06:25:55.273Z">
+<meta property="article:published_time" content="2022-03-31T09:03:01.000Z">
+<meta property="article:modified_time" content="2025-07-20T06:35:10.693Z">
 <meta property="article:author" content="砖头">
-<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于falsk-sqlalchemy中多数据库配置及使用 - 搬砖者</title>
+  <title>记录一次车祸（回忆分析） - 搬砖者</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于falsk-sqlalchemy中多数据库配置及使用"></span>
+            <span id="subtitle" data-typed-text="记录一次车祸（回忆分析）"></span>
           
         </div>
 
@@ -236,8 +235,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-04 16:43" pubdate>
-          2024年7月4日 下午
+        <time datetime="2022-03-31 09:03" pubdate>
+          2022年3月31日 上午
         </time>
       </span>
     
@@ -248,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          614 字
+          1.2k 字
         
       </span>
     
@@ -259,7 +258,7 @@
         
         
         
-          6 分钟
+          11 分钟
         
       </span>
     
@@ -305,23 +304,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">关于falsk-sqlalchemy中多数据库配置及使用</h1>
+            <h1 id="seo-header">记录一次车祸（回忆分析）</h1>
             
             
               <div class="markdown-body">
                 
-                <p> 近期发现了几个免费的数据库，想着尝试用Flask进行简单连接 以前一直使用SQLite，近期打算尝试连接MySQL和Postgre 一些简单的安装等命令就此略过</p>
-<h2 id="多数据源配置"><a href="#多数据源配置" class="headerlink" title="多数据源配置"></a>多数据源配置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 配置SQLite数据源</span><br>sqlite_path = os.path.join(BASE_DIR, <span class="hljs-string">&quot;sys.db&quot;</span>)<br>app.config[<span class="hljs-string">&#x27;SQLALCHEMY_DATABASE_URI&#x27;</span>] = <span class="hljs-string">&#x27;sqlite:///&#x27;</span> + sqlite_path<br><span class="hljs-comment"># 配置MySQL（TiDB）数据源</span><br>MYSQL_USERNAME = <span class="hljs-string">&#x27;USERNAME&#x27;</span><br>MYSQL_PASSWORD = <span class="hljs-string">&#x27;PASSWORD&#x27;</span><br>MYSQL_URL = <span class="hljs-string">&#x27;SQL_URL&#x27;</span><br>MYSQL_PORT = <span class="hljs-string">&#x27;PORT&#x27;</span><br>MYSQL_DATABASE = <span class="hljs-string">&#x27;main&#x27;</span><br>MYSQL_SSL = &#123;<br>    <span class="hljs-string">&#x27;ssl_verify_cert&#x27;</span>: <span class="hljs-string">&#x27;True&#x27;</span>,<br>    <span class="hljs-string">&#x27;ssl_verify_identity&#x27;</span>: <span class="hljs-string">&#x27;True&#x27;</span>,<br>    <span class="hljs-string">&#x27;ssl_cert&#x27;</span>: BASE_DIR + <span class="hljs-string">&#x27;/ca/cert.crt&#x27;</span>,<br>    <span class="hljs-string">&#x27;ssl_key&#x27;</span>: BASE_DIR + <span class="hljs-string">&#x27;/ca/private.key&#x27;</span><br>&#125;<br>MYSQL_URL_ALL = <span class="hljs-string">&#x27;mysql+pymysql://%s:%s@%s:%s/%s?%s&#x27;</span> % (<br>    MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_URL, MYSQL_PORT, MYSQL_DATABASE, urlencode(MYSQL_SSL))<br><span class="hljs-comment"># 配置Postgre数据源</span><br>PG_USERNAME = <span class="hljs-string">&#x27;USERNAME&#x27;</span><br>PG_PASSWORD = <span class="hljs-string">&#x27;PASSWORD&#x27;</span><br>PG_URL = <span class="hljs-string">&#x27;SQL_URL&#x27;</span><br>PG_PORT = <span class="hljs-string">&#x27;PORT&#x27;</span><br>PG_DATABASE = <span class="hljs-string">&#x27;main&#x27;</span><br>PG_URL_ALL = <span class="hljs-string">&#x27;postgresql://%s:%s@%s:%s/%s&#x27;</span> % (PG_USERNAME, PG_PASSWORD, PG_URL, PG_PORT, PG_DATABASE)<br>app.config[<span class="hljs-string">&#x27;SQLALCHEMY_BINDS&#x27;</span>] = &#123;<br>    <span class="hljs-string">&#x27;tidb&#x27;</span>: MYSQL_URL_ALL,<br>    <span class="hljs-string">&#x27;pg&#x27;</span>: PG_URL_ALL,<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1、因为TiDB需要SSL认证，所以加入了SSL&#x3D;True的条件，可根据需要自行设置，关于证书生成如下，共计生成3个文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048<br>openssl req -new -key private.pem -out cert.csr<br>openssl x509 -req -days 365 -in cert.csr -signkey private.pem -out cert.crt<br></code></pre></td></tr></table></figure>
-<h2 id="Model中的配置区别"><a href="#Model中的配置区别" class="headerlink" title="Model中的配置区别"></a>Model中的配置区别</h2><p>1、SQLite中的使用，和日常没区别</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(db.Model):<br><span class="hljs-built_in">id</span> = db.Column(db.Integer, primary_key=<span class="hljs-literal">True</span>)<br>username = db.Column(db.String(<span class="hljs-number">80</span>), unique=<span class="hljs-literal">True</span>)<br>email = db.Column(db.String(<span class="hljs-number">120</span>), unique=<span class="hljs-literal">True</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, username, email</span>):<br>    <span class="hljs-variable language_">self</span>.username = username<br>    <span class="hljs-variable language_">self</span>.email = email<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__repr__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&lt;User %r&gt;&#x27;</span> % <span class="hljs-variable language_">self</span>.username<br></code></pre></td></tr></table></figure>
-<p>2、MySQL中的使用，需要添加BINDS相关信息，用于区分数据源，tidb为前期配置文件内的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Good</span>(db.Model):<br>__bind_key__ = <span class="hljs-string">&#x27;tidb&#x27;</span><br><span class="hljs-built_in">id</span> = db.Column(db.Integer, primary_key=<span class="hljs-literal">True</span>)<br>good = db.Column(db.String(<span class="hljs-number">80</span>), unique=<span class="hljs-literal">True</span>)<br>email = db.Column(db.String(<span class="hljs-number">120</span>), unique=<span class="hljs-literal">True</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, good, email</span>):<br>    <span class="hljs-variable language_">self</span>.good = good<br>    <span class="hljs-variable language_">self</span>.email = email<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__repr__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&lt;Good %r&gt;&#x27;</span> % <span class="hljs-variable language_">self</span>.good<br></code></pre></td></tr></table></figure>
-<p>3、Postgre中的使用，同样需要添加BINDS信息<br>区分MYSQL，PG库中有一个schema概念，若未设置对应模式，则默认为public下的表，如下展示为设置test模式下的表，也增加了tablename的示例</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Name</span>(db.Model):<br>__bind_key__ = <span class="hljs-string">&#x27;pg&#x27;</span><br>__table_args__ = (&#123;<span class="hljs-string">&quot;schema&quot;</span>: <span class="hljs-string">&quot;test&quot;</span>&#125;)<br>__tablename__ = <span class="hljs-string">&#x27;name&#x27;</span><br><span class="hljs-built_in">id</span> = db.Column(db.Integer, primary_key=<span class="hljs-literal">True</span>)<br>name = db.Column(db.String(<span class="hljs-number">80</span>), unique=<span class="hljs-literal">True</span>)<br>email = db.Column(db.String(<span class="hljs-number">120</span>), unique=<span class="hljs-literal">True</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, email</span>):<br>    <span class="hljs-variable language_">self</span>.name = name<br>    <span class="hljs-variable language_">self</span>.email = email<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">__repr__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&lt;Name %r&gt;&#x27;</span> % <span class="hljs-variable language_">self</span>.name<br></code></pre></td></tr></table></figure>
-<h2 id="最终程序测试"><a href="#最终程序测试" class="headerlink" title="最终程序测试"></a>最终程序测试</h2><p>经过此配置，则可通过此种方式进行测试</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># SQLite</span><br>ur = User(<span class="hljs-string">&#x27;admin&#x27;</span>, <span class="hljs-string">&#x27;admin@example.com&#x27;</span>)<br>db.session.add(ur)<br><span class="hljs-comment">#TiDB</span><br>gd = Good(<span class="hljs-string">&#x27;good&#x27;</span>, <span class="hljs-string">&#x27;good@example.com&#x27;</span>)<br>db.session.add(gd)<br><span class="hljs-comment"># PG</span><br>ne = Name(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;name@example.com&#x27;</span>)<br>db.session.add(ne)<br>db.session.commit()<br></code></pre></td></tr></table></figure>
+                <p>开车从毕业到现在已近6年，基本没有事故甚至把别人刮擦，记得上一次事故是家里大人怀孕做坐月子期间，在五彩城拐弯去华润超市时。</p>
+<p>回忆起来上次应该是看了右后视镜，要弯道拐弯进去，而看的过程中前车奔驰突然刹车了，导致还没进入转弯道，就撞到了，踩了紧急刹车，撞的不严重，一切按照保险来。当时认定自己追尾全责，事后回想，是否前车本来也要右转，存在压线的可能，翻看照片无法看出，因此此事也就到此结束。</p>
+<p>22年此次车祸就比较严重，前车凹进去，正副驾驶座安全气囊弹出来，因汽车使用时间较长了，已达保费临近值，最终和修理店协商，卖给修理店，后续由修理店再进行处理。</p>
+<h2 id="事故过程描述："><a href="#事故过程描述：" class="headerlink" title="事故过程描述："></a>事故过程描述：</h2><p>刚下高速，需要盘圈上高架（1行车道1应急道），正在行驶中，突然觉得可能会撞到对面，打了方向盘，并踩了刹车，感觉圈打的以往的大，但是感觉上不到四分之一圈且不急，那一瞬间觉得可能会出问题，突然之间车子开始不受控制，脑海中一片空白，想着要撞了的。车子先撞了右前方，后转圈到右后方，最终撞了左前方停下来。</p>
+<h2 id="事故过程分析："><a href="#事故过程分析：" class="headerlink" title="事故过程分析："></a>事故过程分析：</h2><p>1、【突然】，是因为事后回想起来，是因为突然发现脑海中出现了感觉要撞到前面，速度有点快的画面，而看到之前的1秒是是在开车、玩手机或者想事情，均没有任何记忆。</p>
+<p>2、【打了方向盘】，回想起来感觉不是很突然的打很大的圈，也是日常的打圈，并踩了刹车用于降速（事后回想）</p>
+<p>3、【踩了刹车】，自己想来是应该之前踩了油门在加速，后发现过快踩了刹车。但是车子撞的相对比较厉害，感觉又加速往前冲的迹象，自己怀疑是不是车子不受控制到撞之前在踩油门而非刹车，没有记录仪无法获知。目前无法回想起来那个瞬间脚放在油门还是刹车，后续在多次开车路过的时候特意留意，在该路段盘旋上去的过程中是需要踩油门的。</p>
+<p>4、【觉得可能会出问题】，这个是玄学或者是因为出了事故刚好印证了那会的灵光一闪</p>
+<p>5、【一片空白】，那个过程一片空白，其实那个时候在想很多事情，但是却无法回想起来，在一个瞬间有点闷的状态</p>
+<h2 id="事故处理分析："><a href="#事故处理分析：" class="headerlink" title="事故处理分析："></a>事故处理分析：</h2><p>在车子撞了以后，闻到有股烧焦味（事后交警告知是因为安全气囊弹出有火药），第一时间想着下车，正副驾驶座因为车头变形无法打开，打电话给110进行报警，后想到可以通过后座下车，遂顺利下车等交警。下车后有点懵的状态。</p>
+<p>1、下车后有辆维修的车迅速赶到，比交警还早，最终也在该维修厂卖给了卖家。过程较为曲折，错误在于当初不该选择该类维修厂，后续车拖进去以后就难以在开出来去其它地方维修，维修厂不让放车走（后续有时间在写一个此类的历程）。</p>
+<p>2、再交给路边黄牛维修车前，内心是矛盾的，既知道他们是路边黄牛可能会出问题，又想着要么就交给他们维修的就好了的，最终选择了他们。</p>
+<p>3、事故后未第一时间选择进行4S店维修，全程未想到，只有晚上到家停顿下来回想后，才想起来可以去4S店维修，单方事故，未涉及其它车辆。</p>
+<p>4、事故发生后，交警询问人是否有受伤，轻率的回答了没事，交警单未写任何人受伤，但事故后2小时开始出现胸腔肋骨痛，维修厂小哥告知是气囊弹出缘故，且交警当初特地问了人有没有受伤就是基于此的，后由维修厂小哥带着去交警队重新开具事故单附上胸腔受伤，下午去医院自费进行看病，幸好未任何问题。</p>
+<h2 id="后续影响："><a href="#后续影响：" class="headerlink" title="后续影响："></a>后续影响：</h2><p>目前回想，车子不应该报废，最好的办法是给4S店进行维修，则此时还可以开，因为报废，导致家里需要购置2辆车（本旧车给老人，新买电动车），恰逢电动车涨价，亏了好几万。</p>
 
                 
               </div>
@@ -340,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%B3%85/" class="category-chain-item">技术杂糅</a>
+  <a href="/categories/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" class="category-chain-item">生活琐事</a>
   
   
 
@@ -352,13 +354,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/python/" class="print-no-link">#python</a>
-      
-    </div>
-  
 </div>
 
 
@@ -367,8 +362,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>关于falsk-sqlalchemy中多数据库配置及使用</div>
-      <div>http://060800.xyz/2024/07/04/关于falsk-sqlalchemy中多数据库配置及使用/</div>
+      <div>记录一次车祸（回忆分析）</div>
+      <div>http://060800.xyz/2022/03/31/生活琐事/记录一次车祸（回忆分析）/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +375,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年7月4日</div>
+          <div>2022年3月31日</div>
         </div>
       
       
@@ -412,21 +407,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/04/python/python%E7%A6%BB%E7%BA%BF%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2%E6%90%AD%E5%BB%BA/" title="python离线环境部署搭建">
+                      <a href="/2022/07/04/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%B4%97%E7%89%99%E8%BF%87%E7%A8%8B/" title="记一次洗牙过程">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python离线环境部署搭建</span>
+                        <span class="hidden-mobile">记一次洗牙过程</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2023/07/04/%E6%9C%89%E7%BD%91%E7%BB%9C%E9%94%81%E9%87%8D%E7%BD%AE%E8%A7%A3%E7%BD%91%E7%BB%9C%E9%94%81/" title="有网络锁重置解网络锁">
-                        <span class="hidden-mobile">有网络锁重置解网络锁</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
