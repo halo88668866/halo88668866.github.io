@@ -19,16 +19,20 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="基本概念数据：时数据库中存储的基本对象，是描述事物的符号记录。种类有：文本、图形、图像、音频、视频、学生的档案记录、货物的运输情况等 数据库DB：长期存储在计算机内、有组织的、可共享的大量数据的集合；基本特征：  数据按一定的数据模型组织、描述和存储 可为各种用户共享 冗余度较小 数据独立性较高 易扩展  数据库系统DBS：一个采用数据库技术、有组织地、动态地存储大量相关数据，方便多用户访问的计算">
+<meta property="og:type" content="article">
 <meta property="og:title" content="架构-数据库系统">
 <meta property="og:url" content="http://060800.xyz/2025/07/21/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="搬砖者">
+<meta property="og:description" content="基本概念数据：时数据库中存储的基本对象，是描述事物的符号记录。种类有：文本、图形、图像、音频、视频、学生的档案记录、货物的运输情况等 数据库DB：长期存储在计算机内、有组织的、可共享的大量数据的集合；基本特征：  数据按一定的数据模型组织、描述和存储 可为各种用户共享 冗余度较小 数据独立性较高 易扩展  数据库系统DBS：一个采用数据库技术、有组织地、动态地存储大量相关数据，方便多用户访问的计算">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F-%E4%B8%A4%E7%BA%A7%E6%98%A0%E5%83%8F.png">
 <meta property="article:published_time" content="2025-07-21T13:09:16.000Z">
-<meta property="article:modified_time" content="2025-07-21T06:28:57.194Z">
+<meta property="article:modified_time" content="2025-07-21T09:49:29.137Z">
 <meta property="article:author" content="砖头">
 <meta property="article:tag" content="软考">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F-%E4%B8%A4%E7%BA%A7%E6%98%A0%E5%83%8F.png">
   
   
   
@@ -246,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          963 字
         
       </span>
     
@@ -257,7 +261,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -308,7 +312,53 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>数据</strong>：时数据库中存储的基本对象，是描述事物的符号记录。<br><strong>种类</strong>有：文本、图形、图像、音频、视频、学生的档案记录、货物的运输情况等</p>
+<p><strong>数据库DB</strong>：长期存储在计算机内、有组织的、可共享的大量数据的集合；<br>基本特征：</p>
+<ul>
+<li>数据按一定的数据模型组织、描述和存储</li>
+<li>可为各种用户共享</li>
+<li>冗余度较小</li>
+<li>数据独立性较高</li>
+<li>易扩展</li>
+</ul>
+<p><strong>数据库系统DBS</strong>：一个采用数据库技术、有组织地、动态地存储大量相关数据，方便多用户访问的计算机系统。<br>由四个部分组成：</p>
+<ul>
+<li>数据库：统一管理、长期存储在计算机内，有组织的相关数据的集合</li>
+<li>硬件：构成计算机系统包括存储数据所需的外部设备</li>
+<li>软件：操作系统、数据库管理系统及应用程序</li>
+<li>人员：系统分析和数据库设计人员、应用程序员、最终用户、数据库管理员DBA</li>
+</ul>
+<p><strong>数据库管理系统DBMS</strong>功能：</p>
+<ul>
+<li>实现对共享数据有效的组织、管理和存取</li>
+<li>包括数据定义、数据库操作、数据库运行管理、数据的存储管理、数据库的建立和维护等</li>
+</ul>
+<h3 id="三级模式-两级映像"><a href="#三级模式-两级映像" class="headerlink" title="三级模式-两级映像"></a>三级模式-两级映像</h3><ul>
+<li><p>内模式：管理如何存储物理的数据，对应具体物理存储文件</p>
+</li>
+<li><p>模式：又称为<strong>概念模式</strong>，就是我们通常使用的基本表，根据应用、需求将物理数据划分成一张张表</p>
+</li>
+<li><p>外模式：对应数据库中的视图这个级别，将表进行一定的处理后再提供给用户使用。</p>
+</li>
+<li><p>外模式-模式映射：是<strong>表</strong>和<strong>视图</strong>之间的映射，存在于<strong>概念级</strong>和<strong>外部级</strong>之间，若表中数据发生了修改，只需要修改此映射，而无需修改应用程序</p>
+</li>
+<li><p>模式-内模式映射：是<strong>表</strong>和数据的<strong>物理存储</strong>之间的映射，存在于<strong>概念级</strong>和<strong>内部级</strong>之间，若修改了数据的存储方式，只需修改此映射，而不需要修改应用程序<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F-%E4%B8%A4%E7%BA%A7%E6%98%A0%E5%83%8F.png" srcset="/img/loading.gif" lazyload alt="三级模式-两级映射"></p>
+</li>
+</ul>
+<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><ol>
+<li>需求分析：分析数据存储要求，产出物有<strong>数据流图、数据字典、需求说明书</strong><br> 获得用户对系统的是那个要求：<ol>
+<li>信息要求</li>
+<li>处理要求</li>
+<li>系统要求</li>
+</ol>
+</li>
+<li>概念结构设计：涉及E-R图，也即实体-联系图。<br> 工作步骤包括：选择局部应用、逐一设计分E-R图、E-R图合并。<br> 分E-R图进行合并时，它们之间存在的冲突主要有以下3类：<br> 属性冲突：同一属性可能会存在于不统的E-R图中<br> 命名冲突：相同意义的属性，在不统的分E-R图上悠着不同的命名，或是名称相同的属性在不仝的分E-R图中代表不仝的意义<br> 结构冲突：同一实体在不同的分E-R图中有不同的属性，同一对象在某一分E-R图中被抽象为实体而在另一E-R图中又被抽象为属性</li>
+<li>逻辑结构设计：将E-R图转换成关系模式。<br> 工作步骤包括：确定数据模型、将E-R图转换成为指定的数据模型、确定完整性约束和确定用户视图。</li>
+<li>物理设计：包括确定数据分布、存储结构和访问方式</li>
+<li>数据库实施阶段：根据逻辑设计和物理设计阶段的结果，建立数据库，便携与调试应用程序，组织数据入库，并进行试运行。</li>
+<li>数据库运行和维护阶段：</li>
+</ol>
+<h1 id="规范化和并发控制"><a href="#规范化和并发控制" class="headerlink" title="规范化和并发控制"></a>规范化和并发控制</h1><h1 id="新技术"><a href="#新技术" class="headerlink" title="新技术"></a>新技术</h1>
                 
               </div>
             
