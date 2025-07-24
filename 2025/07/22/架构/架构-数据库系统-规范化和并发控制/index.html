@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%AE%9E%E4%BE%8B.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/BC%E8%8C%83%E5%BC%8F.png">
 <meta property="article:published_time" content="2025-07-22T23:32:24.000Z">
-<meta property="article:modified_time" content="2025-07-24T13:56:21.998Z">
+<meta property="article:modified_time" content="2025-07-24T15:42:29.597Z">
 <meta property="article:author" content="砖头">
 <meta property="article:tag" content="软考">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.1k 字
         
       </span>
     
@@ -264,7 +264,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -351,13 +351,14 @@
 <h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><h2 id="第一范式1NF"><a href="#第一范式1NF" class="headerlink" title="第一范式1NF"></a>第一范式1NF</h2><p>关系中<strong>每一个分量必须是一个不可分的数据项</strong>。<br>通俗地说，第一范式就是表中不允许有小表的存在。比如，下表的员工表，就不属于第一范式。<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%91%98%E5%B7%A5%E8%A1%A8.png" srcset="/img/loading.gif" lazyload alt="第一范式-员工表"></p>
 <ul>
 <li>实例：用一个单一的关系模式学生来描述学校的教务系统：学生（学好、学生姓名、系号、系主人姓名、课程号、成绩）</li>
-<li>依赖关系：（学生-&gt;学号，学生-&gt;学生姓名，学生-&gt;系号，系号-&gt;系主人姓名，学生-&gt;课程号，（学生，课程号）-&gt;成绩，）<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%AE%9E%E4%BE%8B.png" srcset="/img/loading.gif" lazyload alt="第一范式-实例"></li>
+<li>依赖关系：（学号-&gt;学生姓名，学号-&gt;系号，系号-&gt;系主人姓名，学号-&gt;课程号，（学生，课程号）-&gt;成绩）<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%AE%9E%E4%BE%8B.png" srcset="/img/loading.gif" lazyload alt="第一范式-实例"></li>
 </ul>
-<h2 id="第二范式2NF"><a href="#第二范式2NF" class="headerlink" title="第二范式2NF"></a>第二范式2NF</h2><p>如果<strong>关系R属于1NF</strong>，且<strong>每一个非主属性完全函数依赖于任何一个候选码</strong>，则R属于2NF。<br>通俗地说，2NF就是在1NF的基础上，表中的<strong>每一个非主属性不会依赖复合主键中的某一个列</strong>。<br>按照定义，上面的学生表就不满足2NF，因为学号不能完全确定课程号和成绩（每个学生可以选多门课）</p>
+<h2 id="第二范式2NF"><a href="#第二范式2NF" class="headerlink" title="第二范式2NF"></a>第二范式2NF</h2><p>【消除部分依赖】<br>如果<strong>关系R属于1NF</strong>，且<strong>每一个非主属性完全函数依赖于任何一个候选码</strong>，则R属于2NF。<br>通俗地说，2NF就是在1NF的基础上，表中的<strong>每一个非主属性不会依赖复合主键中的某一个列</strong>。<br>按照定义，上面的学生表就不满足2NF，因为学号不能完全确定课程号和成绩（每个学生可以选多门课）</p>
 <p>将学生表分解为：<br>学生（学号，学生姓名，系编号，系名，系主任）<br>选课（学号，课程号，成绩）<br>每张表均属于2NF<br>【参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Dream_angel_Z/article/details/45175621">数据库（第一范式，第二范式，第三范式）_数据库第一范式-CSDN博客</a>】</p>
-<h2 id="第三范式3NF"><a href="#第三范式3NF" class="headerlink" title="第三范式3NF"></a>第三范式3NF</h2><p>在<strong>满足1NF的基础上，表中不存在非主属性对码的传递依赖</strong><br>学生关系模型就不属于3NF，因为学生无法直接决定系主任和系名，是由学号-&gt;系编号，再由系编号-&gt;系主任，系编号-&gt;系名，因此存在非主属性对主属性的传递依赖</p>
+<h2 id="第三范式3NF"><a href="#第三范式3NF" class="headerlink" title="第三范式3NF"></a>第三范式3NF</h2><p>【消除传递依赖】<br>在<strong>满足1NF的基础上，表中不存在非主属性对码的传递依赖</strong><br>学生关系模型就不属于3NF，因为学生无法直接决定系主任和系名，是由学号-&gt;系编号，再由系编号-&gt;系主任，系编号-&gt;系名，因此存在非主属性对主属性的传递依赖</p>
 <p>进一步分解为<br>学生（学号，学生姓名，系编号）<br>系（系编号，系名，系主任）<br>选课（学号，课程号，成绩）<br>每张表均属于3NF</p>
-<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>指<strong>在第三范式的基础上，进一步消除主属性对于码的部分函数传递和传递依赖</strong><br>通俗地说，就是<strong>在每一种情况下，每一个依赖的左边决定因素都必然包含候选键</strong>，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/BC%E8%8C%83%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="BC范式">【参考：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2089714">第一范式、第二范式、第三范式、BCNF范式详解-腾讯云开发者社区-腾讯云</a>】</p>
+<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>【消除主属性部分传递和传递依赖】<br>BC模式可以理解为3NF的优化，修正的3NF。<br>指<strong>在第三范式的基础上，进一步消除主属性对于码的部分函数传递和传递依赖</strong><br>通俗地说，就是<strong>在每一种情况下，每一个依赖的左边决定因素都必然包含候选键</strong>，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/BC%E8%8C%83%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="BC范式">【参考：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2089714">第一范式、第二范式、第三范式、BCNF范式详解-腾讯云开发者社区-腾讯云</a>】<br>【参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wv4y1m7J2?spm_id_from=333.788.videopod.sections&vd_source=bbf7b29e72c0e9767fcb7d2bcf904c64">数据库第6章 关系数据理论（第二部分：范式理论 1NF-2NF-3NF）_哔哩哔哩_bilibili</a>】</p>
+<h1 id="模式分解"><a href="#模式分解" class="headerlink" title="模式分解"></a>模式分解</h1><p>范式之间的转换一般都通过拆分属性，即<strong>模式分解</strong></p>
 
                 
               </div>
