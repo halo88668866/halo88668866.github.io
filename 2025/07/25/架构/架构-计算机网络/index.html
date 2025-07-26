@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A7%81%E6%9C%89%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%85%B6%E4%BB%96%E7%89%B9%E6%AE%8A%E5%9C%B0%E5%9D%80.png">
 <meta property="article:published_time" content="2025-07-25T23:36:50.000Z">
-<meta property="article:modified_time" content="2025-07-26T01:11:48.838Z">
+<meta property="article:modified_time" content="2025-07-26T13:37:25.375Z">
 <meta property="article:author" content="砖头">
 <meta property="article:tag" content="软考">
 <meta name="twitter:card" content="summary_large_image">
@@ -393,18 +393,19 @@
 <ul>
 <li>语法：规定传输数据的格式</li>
 <li>语义：规定索要完成的功能</li>
-<li>时序：规定各种操作的条件、顺序关系等<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/TCP-IP%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="TCP-IP协议"><br><strong>四层协议</strong>：<br>【网络层】</li>
+<li>时序：规定各种操作的条件、顺序关系等<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/TCP-IP%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="TCP-IP协议"><br><strong>四层协议</strong>：</li>
+</ul>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><ul>
 <li>IP:网络层最重要的核心协议，在源地址和目的地址之间传送数据报，无连接、不可靠。</li>
 <li>ICMP：因特网控制报文协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。</li>
 <li>ARP和RARP：地址解析协议，ARP是将IP地址转换为物理地址，RARP是将物理地址转换为IP地址。</li>
 <li>IGMP：网络组管理协议，允许因特网中的计算机参加多播，是计算机用做向相邻多目路由器报告多目组成员的协议，支持组播。</li>
 </ul>
-<p>【传输层】</p>
-<ul>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ul>
 <li>TCP：整个TCP&#x2F;IP协议族中最重要的协议之一，在IP协议提供的不可靠数据数据基础上，采用<br>了重发技术，为应用程序提供了一个<strong>可靠的、面向连接的、全双工</strong>的数据传输服务。一般用于传<br>输数据量比较少，且对可靠性要求高的场合。</li>
 <li>UDP：是一种<strong>不可靠、无连接</strong>的协议，有助于提高传输速率，一般用于传输数据量大，对可靠<br>性要求不高，但要求速度快的场合。</li>
 </ul>
-<p>【应用层】<br>基于TCP的FTP、HTTP等都是可靠传输。基于UDP的DHCP、DNS等都是不可靠传输。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>基于TCP的FTP、HTTP等都是可靠传输。基于UDP的DHCP、DNS等都是不可靠传输。</p>
 <ul>
 <li>FTP：可靠的文件传输协议，用于因特网上的控制文件的双向传输。</li>
 <li>HTTP：超文本传输协议，用于从WWW服务器传输超文本到本地浏览器的传输协议。使用SSL加密后的安全网页协议为HTTPS</li>
@@ -462,14 +463,14 @@
 </ul>
 </li>
 </ul>
-<h1 id="IP地址表示"><a href="#IP地址表示" class="headerlink" title="IP地址表示"></a>IP地址表示</h1><p>机器中存放的<strong>IP地址是32位的二进制代码</strong>，<strong>每隔8位</strong>插入一个空格，可提高可读性，为了便于理解和设置，一般会采用<strong>点分十进制</strong>方法来表示：<br>	将32位二进制代码<strong>每8位二进制转换成十进制，就变成了4个十进制数</strong>，而后在每个十进制数间隔中插入.，如下所示，最终为128. 11.3.31：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/IP%E8%A1%A8%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="IP表示"><br>	因为每个十进制数都是由8个二进制数转换而来，因此<strong>每个十进制数的取值范围为0-255</strong>（掌握二进制转十进制的快速计算方法，牢记2的幕指数值，实现快速转换）。</p>
-<h3 id="分类IP地址"><a href="#分类IP地址" class="headerlink" title="分类IP地址"></a>分类IP地址</h3><p>IP地址分四段，每段八位，共32位二进制数组成。<br>在逻辑上，这32位IP地址分为<strong>网络号和主机号</strong>，依据网络号位数的不同，可以将IP地址分为以下几类：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%88%86%E7%B1%BBIP%E5%9C%B0%E5%9D%80.png" srcset="/img/loading.gif" lazyload alt="分类IP地址"></p>
-<h3 id="无分类编址"><a href="#无分类编址" class="headerlink" title="无分类编址"></a>无分类编址</h3><p>即不按照A、B、C类规则，自动规定网络号，无分类编址格式为：IP地址&#x2F;网络号，<br>示例：128.168.0.11&#x2F;20表示的IP地址为128.168.0.11，其网络号占20位，因此主机号占32-20&#x3D;12位，也可以划分子网。</p>
-<h3 id="特殊IP地址"><a href="#特殊IP地址" class="headerlink" title="特殊IP地址"></a>特殊IP地址</h3><ul>
+<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p>机器中存放的<strong>IP地址是32位的二进制代码</strong>，<strong>每隔8位</strong>插入一个空格，可提高可读性，为了便于理解和设置，一般会采用<strong>点分十进制</strong>方法来表示：<br>	将32位二进制代码<strong>每8位二进制转换成十进制，就变成了4个十进制数</strong>，而后在每个十进制数间隔中插入.，如下所示，最终为128. 11.3.31：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/IP%E8%A1%A8%E7%A4%BA.png" srcset="/img/loading.gif" lazyload alt="IP表示"><br>	因为每个十进制数都是由8个二进制数转换而来，因此<strong>每个十进制数的取值范围为0-255</strong>（掌握二进制转十进制的快速计算方法，牢记2的幕指数值，实现快速转换）。</p>
+<h2 id="分类IP地址"><a href="#分类IP地址" class="headerlink" title="分类IP地址"></a>分类IP地址</h2><p>IP地址分四段，每段八位，共32位二进制数组成。<br>在逻辑上，这32位IP地址分为<strong>网络号和主机号</strong>，依据网络号位数的不同，可以将IP地址分为以下几类：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%88%86%E7%B1%BBIP%E5%9C%B0%E5%9D%80.png" srcset="/img/loading.gif" lazyload alt="分类IP地址"></p>
+<h2 id="无分类编址"><a href="#无分类编址" class="headerlink" title="无分类编址"></a>无分类编址</h2><p>即不按照A、B、C类规则，自动规定网络号，无分类编址格式为：IP地址&#x2F;网络号，<br>示例：128.168.0.11&#x2F;20表示的IP地址为128.168.0.11，其网络号占20位，因此主机号占32-20&#x3D;12位，也可以划分子网。</p>
+<h2 id="特殊IP地址"><a href="#特殊IP地址" class="headerlink" title="特殊IP地址"></a>特殊IP地址</h2><ul>
 <li>公有地址：<strong>通过它可以直接访问因特网。是全网唯一的IP地址</strong></li>
 <li>私有地址：属于<strong>非注册地址，专门为组织机构内部使用</strong>。不能直接访问英特网。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A7%81%E6%9C%89%E5%9C%B0%E5%9D%80.png" srcset="/img/loading.gif" lazyload alt="私有地址"><br>其他特殊地址如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%85%B6%E4%BB%96%E7%89%B9%E6%AE%8A%E5%9C%B0%E5%9D%80.png" srcset="/img/loading.gif" lazyload alt="其他特殊地址"></li>
 </ul>
-<h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3><p>子网划分：一般公司在申请网络时，会直接获得一个范围很大的网络，如一个B类地址，因为<strong>主机数之间相差的太大了，不利于分配</strong>，我们一般采用<strong>子网划分的方法来划分网络</strong>，即<strong>自定义网络号位数</strong>，就能自定义主机号位数，就能<strong>根据主机个数来划分出最适合的方案，不会造成资源的浪费</strong>。<br>因此就有子网的概念，一般的IP地址按标准划分为ABC类后，可以进行再步的划分，将<strong>主机号拿出几位作为子网号</strong>，就可以划分出多个子网，此时IP地址组成为：<strong>网络号+子网号+主机号</strong>。<br>【<strong>网络号和子网号都为1，主机号都为0，这样的地址为子网掩码</strong>】<br>要注意的是：子网号可以为全0和全1，<strong>主机号不能为全0或全1</strong>，因此，主机数需要-2，而子网数不用。<br>还可以<strong>聚合网络为超网</strong>，就是划分子网的逆过程，将<strong>网络号取出几位作为主机号</strong>，此时，这个网络内的主机数量就变多了，成为一个更大的网络。</p>
+<h2 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h2><p>子网划分：一般公司在申请网络时，会直接获得一个范围很大的网络，如一个B类地址，因为<strong>主机数之间相差的太大了，不利于分配</strong>，我们一般采用<strong>子网划分的方法来划分网络</strong>，即<strong>自定义网络号位数</strong>，就能自定义主机号位数，就能<strong>根据主机个数来划分出最适合的方案，不会造成资源的浪费</strong>。<br>因此就有子网的概念，一般的IP地址按标准划分为ABC类后，可以进行再步的划分，将<strong>主机号拿出几位作为子网号</strong>，就可以划分出多个子网，此时IP地址组成为：<strong>网络号+子网号+主机号</strong>。<br>【<strong>网络号和子网号都为1，主机号都为0，这样的地址为子网掩码</strong>】<br>要注意的是：子网号可以为全0和全1，<strong>主机号不能为全0或全1</strong>，因此，主机数需要-2，而子网数不用。<br>还可以<strong>聚合网络为超网</strong>，就是划分子网的逆过程，将<strong>网络号取出几位作为主机号</strong>，此时，这个网络内的主机数量就变多了，成为一个更大的网络。</p>
 
                 
               </div>
