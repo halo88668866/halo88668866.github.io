@@ -37,10 +37,13 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%88%86%E7%B1%BBIP%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A7%81%E6%9C%89%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%85%B6%E4%BB%96%E7%89%B9%E6%AE%8A%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%971.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%972.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/RAID+X.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/NAS%E5%92%8CSAN%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84.png">
 <meta property="article:published_time" content="2025-07-25T23:36:50.000Z">
-<meta property="article:modified_time" content="2025-07-26T13:51:28.524Z">
+<meta property="article:modified_time" content="2025-07-26T14:15:45.020Z">
 <meta property="article:author" content="砖头">
-<meta property="article:tag" content="软考">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%88%86%E5%B8%83%E8%8C%83%E5%9B%B4%E5%92%8C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png">
   
@@ -260,7 +263,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.5k 字
+          5.3k 字
         
       </span>
     
@@ -271,7 +274,7 @@
         
         
         
-          38 分钟
+          45 分钟
         
       </span>
     
@@ -486,7 +489,36 @@
 <li>隧道技术：这种机制用来在IPv4网络之上建立一条能够传输IPv6数据报的隧道，例如可以将IPv6数据报当做IPv4数据报的数据部分加以封装，只需要加一个IPv4的首部，就能在IPv4网络中传输IPv6报文。</li>
 <li>翻译技术：利用一台专门的翻译设备（如转换网关），在纯IPv4和纯IPv6网络之间转换IP报头的地址，同时根据协议不同对分组做相应的语义翻译，从而使纯IPv4和纯IPv6站点之间能够透明通信。</li>
 </ol>
-<h1 id="廉价磁盘冗余阵列"><a href="#廉价磁盘冗余阵列" class="headerlink" title="廉价磁盘冗余阵列"></a>廉价磁盘冗余阵列</h1><p>RAID即磁盘冗余阵列技术，将数据分散存储在不同磁盘中，可并行读取，可冗余存储，提高磁盘访问速度，保障数据安全性。<br>RAID0将数据分散的存储在不同磁盘中，磁盘利用率100%，访问速度最快，但是没有提供冗余和错误修复技术;<br>RAID1在成对的独立磁盘上产生互为备份的数据，增加存储可靠性，可以纠错，但磁盘利用率只有50%;</p>
+<h1 id="廉价磁盘冗余阵列"><a href="#廉价磁盘冗余阵列" class="headerlink" title="廉价磁盘冗余阵列"></a>廉价磁盘冗余阵列</h1><p><strong>RAID即磁盘冗余阵列技术</strong>，将数据分散存储在不同磁盘中，可并行读取，可冗余存储，提高磁盘访问速度，保障数据安全性。</p>
+<ul>
+<li><p>*<strong>RAID0</strong>将数据分散的存储在不同磁盘中，磁盘利用率100%，访问速度最快，但是没有提供冗余和错误修复技术；</p>
+</li>
+<li><p>*<strong>RAID1</strong>在成对的独立磁盘上产生互为备份的数据，增加存储可靠性，可以纠错，但磁盘利用率只有50%；</p>
+</li>
+<li><p><strong>RAID2</strong>将数据条块化的分布于不同硬盘上，并使用海明码校验；</p>
+</li>
+<li><p><strong>RAID3</strong>使用奇偶校验，并用单块磁盘存储奇偶校验信息(可靠性低于RAID5)</p>
+</li>
+<li><p><strong>RAID5</strong>在所有磁盘上交叉的存储数据及奇偶校验信息(所有校验信息存储总量为一个磁盘容量但分布式存储在不同的磁盘上)，读&#x2F;写指针可同时操作；<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%971.png" srcset="/img/loading.gif" lazyload alt="磁盘阵列1"><br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%972.png" srcset="/img/loading.gif" lazyload alt="磁盘阵列2"></p>
+</li>
+<li><p>RAID0+1(是两个RAID0，若一个磁盘损坏，则当前RAID0无法工作，即有一半的磁盘无法工作)；</p>
+</li>
+<li><p>RAID1+0(是两个RAID1，不允许同一组中的两个磁盘同时损坏)与RAID1原理类似，磁盘利用率都只有50%，但安全性更高。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/RAID+X.png" srcset="/img/loading.gif" lazyload alt="RAID+X"><br>【参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lebeiweilanhu/article/details/145928684">Raid0、Raid1、Raid5、Raid6、Raid10的区别-CSDN博客</a>】</p>
+</li>
+</ul>
+<h1 id="网络存储技术"><a href="#网络存储技术" class="headerlink" title="网络存储技术"></a>网络存储技术</h1><h2 id="直接附加存储-DAS"><a href="#直接附加存储-DAS" class="headerlink" title="直接附加存储(DAS)"></a>直接附加存储(DAS)</h2><p>直接附加存储(DAS)是指将存储设备通过SCSI接口直接连接到一台服务器上使用，其本身是硬件的堆叠，存储操作依赖于服务器，不带有任何存储操作系统。<br>存在问题：在传递距离、连接数量、传输速率等方面都受到限制。</p>
+<ul>
+<li>容量难以扩展升级</li>
+<li>数据处理和传输能力降低</li>
+<li>服务器异常会波及存储器</li>
+</ul>
+<h2 id="网络附加存储-NAS"><a href="#网络附加存储-NAS" class="headerlink" title="网络附加存储(NAS)"></a>网络附加存储(NAS)</h2><p>网络附加存储(NAS)通过网络接口与网络直接相连，由用户通过网络访问，有独立的存储系统。<br>NAS存储设备类似于一个专用的文件服务器，去掉了通用服务器大多数计算功能，而仅仅提供文件系统功能。<br>以数据为中心，将存储设备与服务器分离，其存储设备在功能上完全独立于网络中的主服务器。<br>客户机与存储设备之间的数据访问不再需要文件服务器的干预，同时它允许客户机与存储设备之间进行直接的数据访问，所以不仅响应速度快，而且数据传输速率也很高。<br>NAS的性能特点是</p>
+<ul>
+<li>进行小文件级的共享存取；</li>
+<li>支持即插即用；</li>
+<li>可以很经济的解决存储容量不足的问题，但难以获得满意的性能。</li>
+</ul>
+<h2 id="存储区域网-SAN"><a href="#存储区域网-SAN" class="headerlink" title="存储区域网(SAN)"></a>存储区域网(SAN)</h2><p>SAN是通过专用交换机将磁盘阵列与服务器连接起来的高速专用子网。<br>它没有采用文件共享存取方式，而是采用块(block)级别存储。<br>SAN是通过专用高速网将一个或多个网络存储设备和服务器连接起来的专用存储系统，其最大特点是将存储设备从传统的以太网中分离了出来，成为独立的存储区域网络SAN 的系统结构。<br>根据数据传输过程采用的协议，其技术划分为FCSAN(光纤通道)、IPSAN(IP网络)和IBSAN(无线带宽)技术。<br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/NAS%E5%92%8CSAN%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="NAS和SAN存储架构"></p>
 
                 
               </div>
@@ -505,7 +537,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
+  <a href="/categories/%E8%BD%AF%E8%80%83/" class="category-chain-item">软考</a>
   
   
 
@@ -516,13 +548,6 @@
 
     </div>
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E8%BD%AF%E8%80%83/" class="print-no-link">#软考</a>
-      
-    </div>
   
 </div>
 
