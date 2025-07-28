@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E4%B8%89%E5%A4%A7%E6%A8%A1%E5%9E%8B.png">
 <meta property="article:published_time" content="2025-07-28T16:17:50.000Z">
-<meta property="article:modified_time" content="2025-07-28T21:55:35.353Z">
+<meta property="article:modified_time" content="2025-07-28T22:09:12.981Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82.png">
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          3.6k 字
         
       </span>
     
@@ -262,7 +262,7 @@
         
         
         
-          22 分钟
+          30 分钟
         
       </span>
     
@@ -399,6 +399,35 @@
 <li><strong>行为模型(状态转换图STD)</strong></li>
 <li><strong>数据模型(E-R图)</strong><br><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E4%B8%89%E5%A4%A7%E6%A8%A1%E5%9E%8B.png" srcset="/img/loading.gif" lazyload alt="需求分析三大模型"></li>
 </ul>
+<p><strong>数据字典</strong><br>数据字典DD：是一种<strong>用户可以访问的记录数据库和应用程序元数据的目录</strong>。<br>数据字典是指对数据的<strong>数据项、数据结构、数据流、数据存储、处理逻辑</strong>等进行定义和描述，其目的是对数据流程图中的<strong>各个元素做出详细的说明</strong>。简而言之，数据字典是<strong>描述数据的信息集合</strong>，是对系统中使用的所有数据元素定义的集合。<br>数据字典各部分的描述如下：</p>
+<ul>
+<li><strong>数据项</strong>：数据流图中数据块的数据结构中的数据项说明。数据项是不可再分的数据单位</li>
+<li><strong>数据结构</strong>：数据流图中数据块的数据结构说明。数据结构反映了数据之间的组合关系。</li>
+<li><strong>数据流</strong>：数据流图中流线的说明。</li>
+<li><strong>数据存储</strong>：数据流图中数据块的存储特性说明。</li>
+<li><strong>处理过程</strong>：数据流图中功能块的说明。</li>
+</ul>
+<h3 id="需求变更和需求追踪"><a href="#需求变更和需求追踪" class="headerlink" title="需求变更和需求追踪"></a>需求变更和需求追踪</h3><p>为了使开发组织能够<strong>严格控制软件项目</strong>，应该确保以下事项：</p>
+<ul>
+<li>仔细<strong>评估已建议的变更</strong>。</li>
+<li>挑选合适的人选<strong>对变更做出判定</strong></li>
+<li>变更应及时<strong>通知所有相关人员</strong></li>
+<li>项目要<strong>按一定的程序来采纳需求变更</strong>，对变更的过程和状态进行控制。<br>变更控制过程如图所示：<br>![[&#x2F;images&#x2F;架构-软件工程&#x2F;变更控制过程.png]]</li>
+</ul>
+<ol>
+<li><strong>问题分析和变更描述</strong>。当提出一份变更提议后，需要对该提议做进一步的问题分析，检查它的有效性从而产生一个更明确的需求变更提议。</li>
+<li><strong>变更分析和成本计算</strong>。当接受该变更提议后，需要对需求变更提议进行影响分析和评估。变更成本计算应该包括对该变更所引起的所有改动的成本，例如修改需求文档、相应的设计、实现等工作成旦分析完成并且被确认，应该进行是否执行这一变更的决策。</li>
+<li><strong>变更实现</strong>。当确定执行该变更后，需要根据该变更的影响范围，按照开发的过程模型执行相应的变更。</li>
+</ol>
+<p><strong>变更控制委员会</strong>(CCB)是项目所有者权益代表，负责<strong>裁定接受哪些变更</strong>。<br>CCB由项目所涉及的多方成员共同组成，通常包括用户和实施方的决策人员。<strong>CCB 是决策机构，不是作业机构</strong>，通常CCB的工作是通过评审手段来决定项目是否能变更，但<strong>不提出变更方案</strong>。</p>
+<p>变更控制委员会应该有一个总则，用于描述变更控制委员会的目的、授权范围、成员构成、做出决策的过程及操作步骤。过程及操作步骤为：<strong>制定决策、交流情况、重新协商约定</strong></p>
+<p>需求跟踪提供了由<strong>需求到产品实现整个过程范围的明确查阅的能力</strong>。需求跟踪的目的是建立与维护“需求一设计一编程一测试”之间的一致性，确保<strong>所有的工作成果符合用户需求</strong>。</p>
+<p>需求跟踪有两种方式:</p>
+<ol>
+<li><strong>正向跟踪</strong>：检查《产品需求规格说明书》中的每个需求是否都能在后继工作成果中找到对应点。</li>
+<li><strong>逆向跟踪</strong>：检查设计文档、代码、测试用例等工作成果是否都能在《产品需求规格说明书》中找到出处。</li>
+</ol>
+<p>正向跟踪和逆向跟踪合称为“<strong>双向跟踪</strong>”。不论采用何种跟踪方式，都要建立与维护<strong>需求跟踪矩阵</strong>(即表格)。需求跟踪矩阵保存了需求与后继工作成果的对应关系。</p>
 <h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><h1 id="测试基础知识"><a href="#测试基础知识" class="headerlink" title="测试基础知识"></a>测试基础知识</h1><h1 id="系统运行与维护"><a href="#系统运行与维护" class="headerlink" title="系统运行与维护"></a>系统运行与维护</h1><h1 id="净室软件工程"><a href="#净室软件工程" class="headerlink" title="净室软件工程"></a>净室软件工程</h1><h1 id="基于构件的软件工程"><a href="#基于构件的软件工程" class="headerlink" title="基于构件的软件工程"></a>基于构件的软件工程</h1>
                 
               </div>
