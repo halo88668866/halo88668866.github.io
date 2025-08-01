@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E8%80%A6%E5%90%88%E7%A8%8B%E5%BA%A6%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%B8%89%E5%A4%A7%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99.png">
 <meta property="article:published_time" content="2025-07-28T16:17:50.000Z">
-<meta property="article:modified_time" content="2025-07-31T21:51:33.248Z">
+<meta property="article:modified_time" content="2025-08-01T08:36:34.042Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82.png">
@@ -343,13 +343,13 @@
 </li>
 <li><p><strong>系统需求</strong>：从系统的角度来说明软件的需求，包括功能需求、非功能需求和设计约束等。</p>
 <ol>
-<li>功能需求：也称为行为需求，规定了<strong>开发人员必须在系统中实现的软件功能</strong>，用户利用这些功能来完成任务，满足业务需要。</li>
-<li>功能需求：指<strong>系统必须具备的属性或品质</strong>，又可以细分为软件质量属性（如可维护性、可靠性、效率等）和其他非功能需求。</li>
-<li>设计约束：也称为限制条件或补充规约，通常是<strong>对系统的一些约束说明</strong>，例如必须采用国有自主知识产权的数据库系统，必须运行在UNIX操作系统之下等。</li>
+<li><strong>功能需求</strong>：也称为行为需求，规定了<strong>开发人员必须在系统中实现的软件功能</strong>，用户利用这些功能来完成任务，满足业务需要。</li>
+<li><strong>非功能需求</strong>：指<strong>系统必须具备的属性或品质</strong>，又可以细分为软件质量属性（如可维护性、可靠性、效率等）和其他非功能需求。</li>
+<li><strong>设计约束</strong>：也称为限制条件或补充规约，通常是<strong>对系统的一些约束说明</strong>，例如必须采用国有自主知识产权的数据库系统，必须运行在UNIX操作系统之下等。</li>
 </ol>
 </li>
 </ul>
-<h2 id="需求获取"><a href="#需求获取" class="headerlink" title="需求获取"></a>需求获取</h2><p>是一个<strong>确定和理解不同的项目干系人的需求和约束的过程</strong>。<br>需求获取参考步骤：</p>
+<h2 id="需求开发"><a href="#需求开发" class="headerlink" title="需求开发"></a>需求开发</h2><h3 id="需求获取"><a href="#需求获取" class="headerlink" title="需求获取"></a>需求获取</h3><p>是一个<strong>确定和理解不同的项目干系人的需求和约束的过程</strong>。<br>需求获取参考步骤：</p>
 <ol>
 <li><strong>开发高层的业务模型</strong>：建立一个业务模型，描述用户的业务过程，确定用户的初始需求。</li>
 <li><strong>定义项目范围和高层需求</strong>：项目范围描述系统的边界以及系统与系统交互的参与者之间的关系。高层需求不涉及过多的细节，主要表示系统需求的概貌。<br> 常见的建模手段包括：<strong>系统上下文图</strong>和<strong>系统顶层用例图</strong>等。</li>
@@ -367,8 +367,8 @@
 <li><strong>原型化方法</strong>：在需求的早期，用户往往在具体的需求定义上存在很多不确定性。此时往往可以通过<strong>在需求阶段采用原型化方法，通过开发系统原型以及与用户的多次选代反馈</strong>，解决在早期阶段需求不确定的问题，尤其是在人机界面等高度不确定的需求。</li>
 <li><strong>头脑风暴法</strong>:在一些新业务拓展的软件项目中，由于业务是新出现的，而且<strong>业务流程存在高度的不确定性</strong>，例如互联网上的新业务系统、App等，<strong>一群人围绕该业务，发散思维，不断产生新的观点</strong>，参会者敞开思想使各种设想在相互碰撞中激起大脑的创造性风暴，从而确定具体的需求。</li>
 </ol>
-<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>一个好的需求应该具有<strong>无二义性、完整性、一致性、可测试性、确定性、可跟踪性、正确性、必要性</strong>等特性，因此，需要分析人员把<strong>杂乱无章的用户要求和期望转化为用户需求</strong>，这就是需求分析的工作。</p>
-<h3 id="结构化分析"><a href="#结构化分析" class="headerlink" title="结构化分析"></a>结构化分析</h3><p><strong>结构化分析</strong>方法给出一组<strong>帮助系统分析人员产生功能规约的原理与技术</strong>。它一般利用图形表达用户需求，使用的手段主要有<strong>数据流图、数据字典、结构化语言、判定表以及判定树</strong>等。</p>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>一个好的需求应该具有<strong>无二义性、完整性、一致性、可测试性、确定性、可跟踪性、正确性、必要性</strong>等特性，因此，需要分析人员把<strong>杂乱无章的用户要求和期望转化为用户需求</strong>，这就是需求分析的工作。</p>
+<h4 id="结构化分析"><a href="#结构化分析" class="headerlink" title="结构化分析"></a>结构化分析</h4><p><strong>结构化分析</strong>方法给出一组<strong>帮助系统分析人员产生功能规约的原理与技术</strong>。它一般利用图形表达用户需求，使用的手段主要有<strong>数据流图、数据字典、结构化语言、判定表以及判定树</strong>等。</p>
 <p>结构化分析的步骤如下：</p>
 <ol>
 <li>分析业务情况，做出<strong>反映当前物理模型的数据流图(DFD)</strong>；</li>
@@ -413,7 +413,7 @@
 <li><strong>数据存储</strong>：数据流图中数据块的存储特性说明。</li>
 <li><strong>处理过程</strong>：数据流图中功能块的说明。</li>
 </ul>
-<h2 id="需求变更和需求追踪"><a href="#需求变更和需求追踪" class="headerlink" title="需求变更和需求追踪"></a>需求变更和需求追踪</h2><p>为了使开发组织能够<strong>严格控制软件项目</strong>，应该确保以下事项：</p>
+<h2 id="需求管理"><a href="#需求管理" class="headerlink" title="需求管理"></a>需求管理</h2><h3 id="需求变更和需求追踪"><a href="#需求变更和需求追踪" class="headerlink" title="需求变更和需求追踪"></a>需求变更和需求追踪</h3><p>为了使开发组织能够<strong>严格控制软件项目</strong>，应该确保以下事项：</p>
 <ul>
 <li>仔细<strong>评估已建议的变更</strong>。</li>
 <li>挑选合适的人选<strong>对变更做出判定</strong></li>
