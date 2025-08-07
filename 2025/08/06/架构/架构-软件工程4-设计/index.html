@@ -19,12 +19,12 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概述系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，最终勾画出新系统的详细设计方法。 人机界面设计人机界面设计三大黄金原则 置于用户控制之下 以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式 提供灵活的交互 允许用户交互可以被中断和撒销 当技能级别增加时可以使交互流水化并允许定制交互 使用户隔离内部技术细节 设计应允许用户和出现在屏幕上的对象">
+    <meta name="description" content="概述系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，最终勾画出新系统的详细设计方法。 人机界面设计人机界面设计三大黄金原则： 置于用户控制之下 以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式 提供灵活的交互 允许用户交互可以被中断和撒销 当技能级别增加时可以使交互流水化并允许定制交互 使用户隔离内部技术细节 设计应允许用户和出现在屏幕上的对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="架构-软件工程4-设计">
 <meta property="og:url" content="http://060800.xyz/2025/08/06/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B4-%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="概述系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，最终勾画出新系统的详细设计方法。 人机界面设计人机界面设计三大黄金原则 置于用户控制之下 以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式 提供灵活的交互 允许用户交互可以被中断和撒销 当技能级别增加时可以使交互流水化并允许定制交互 使用户隔离内部技术细节 设计应允许用户和出现在屏幕上的对象">
+<meta property="og:description" content="概述系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，最终勾画出新系统的详细设计方法。 人机界面设计人机界面设计三大黄金原则： 置于用户控制之下 以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式 提供灵活的交互 允许用户交互可以被中断和撒销 当技能级别增加时可以使交互流水化并允许定制交互 使用户隔离内部技术细节 设计应允许用户和出现在屏幕上的对">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%B8%89%E5%A4%A7%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%A4%9A%E6%89%87%E5%85%A5%E5%B0%91%E6%89%87%E5%87%BA.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB.png">
 <meta property="article:published_time" content="2025-08-06T13:11:00.000Z">
-<meta property="article:modified_time" content="2025-08-07T05:09:45.942Z">
+<meta property="article:modified_time" content="2025-08-07T06:28:59.398Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%B8%89%E5%A4%A7%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99.png">
@@ -317,8 +317,8 @@
               <div class="markdown-body">
                 
                 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，<strong>最终勾画出新系统的详细设计方法</strong>。</p>
-<h1 id="人机界面设计"><a href="#人机界面设计" class="headerlink" title="人机界面设计"></a>人机界面设计</h1><p><strong>人机界面设计三大黄金原则</strong></p>
-<h2 id="置于用户控制之下"><a href="#置于用户控制之下" class="headerlink" title="置于用户控制之下"></a>置于用户控制之下</h2><ul>
+<h1 id="人机界面设计"><a href="#人机界面设计" class="headerlink" title="人机界面设计"></a>人机界面设计</h1><p><strong>人机界面设计三大黄金原则</strong>：</p>
+<h3 id="置于用户控制之下"><a href="#置于用户控制之下" class="headerlink" title="置于用户控制之下"></a>置于用户控制之下</h3><ul>
 <li>以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式</li>
 <li>提供灵活的交互</li>
 <li>允许用户交互可以被中断和撒销</li>
@@ -326,14 +326,14 @@
 <li>使用户隔离内部技术细节</li>
 <li>设计应允许用户和出现在屏幕上的对象直接交互</li>
 </ul>
-<h2 id="减少用户的记忆负担"><a href="#减少用户的记忆负担" class="headerlink" title="减少用户的记忆负担"></a>减少用户的记忆负担</h2><ul>
+<h3 id="减少用户的记忆负担"><a href="#减少用户的记忆负担" class="headerlink" title="减少用户的记忆负担"></a>减少用户的记忆负担</h3><ul>
 <li>减少对短期记忆的要求</li>
 <li>建立有意义的缺省</li>
 <li>定义直觉性的捷径</li>
 <li>界面的视觉布局应该基于真实世界的隐喻</li>
 <li>以不断进展的方式揭示信息</li>
 </ul>
-<h2 id="保持界面的一致性"><a href="#保持界面的一致性" class="headerlink" title="保持界面的一致性"></a>保持界面的一致性</h2><ul>
+<h3 id="保持界面的一致性"><a href="#保持界面的一致性" class="headerlink" title="保持界面的一致性"></a>保持界面的一致性</h3><ul>
 <li>允许用户将当前任务放入有意义的语境</li>
 <li>在应用系列内保持一致性</li>
 <li>如过去的交互模型已建立起了用户期望，除非有迫不得已的理由，不要改变它<br><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%B8%89%E5%A4%A7%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99.png" srcset="/img/loading.gif" lazyload alt="三大黄金原则"></li>
@@ -343,8 +343,7 @@
 <li>概要设计【外部设计】：又称为<strong>系统总体结构设计</strong>，是将系统的功能需求分配给软件模块，确定每个模块的功能和调用关系，<strong>形成软件的模块结构图，即系统结构图</strong>。+概要设计书</li>
 <li>详细设计【内部设计】：确定每个具体任务选择适当的技术手段和处理方法，<strong>模块内详细算法设计、模块内数据结构设计、数据库的物理设计、其他设计(代码、输入&#x2F;输出格式、用户界面)</strong>、编写详细设计说明书、评审。</li>
 </ul>
-<h2 id="概要设计"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计</h2><p>系统设计原则：</p>
-<ul>
+<h2 id="概要设计"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计</h2><h4 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h4><ul>
 <li>保持模块的大小适中</li>
 <li>尽可能减少调用的深度</li>
 <li>多扇入，少扇出<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%A4%9A%E6%89%87%E5%85%A5%E5%B0%91%E6%89%87%E5%87%BA.png" srcset="/img/loading.gif" lazyload alt="多扇入少扇出"><br>  <strong>当扇出过多时，可考虑拆分</strong></li>
@@ -352,21 +351,19 @@
 <li>模块的作用域应该在模块之内，模块独立性原则（藕合性和内聚性）</li>
 <li>功能应该是可预测的</li>
 </ul>
-<p>模块的四个要素（了解）</p>
-<ul>
+<h4 id="模块的四个要素（了解）"><a href="#模块的四个要素（了解）" class="headerlink" title="模块的四个要素（了解）"></a>模块的四个要素（了解）</h4><ul>
 <li><strong>输入和输出</strong>：模块的输入来源和输出去向都是同一个调用者，即一个块从调用者那儿取得输入，进行加工后再把输出返回调用者。</li>
 <li><strong>处理功能</strong>：指模块把输入转换成输出所做的工作。</li>
 <li><strong>内部数据</strong>：指仅供该模块本身引用的数据。</li>
 <li><strong>程序代码</strong>：指用来实现模块功能的程序。</li>
 </ul>
-<p>系统设计基本原理：</p>
-<ul>
+<h4 id="设计基本原理："><a href="#设计基本原理：" class="headerlink" title="设计基本原理："></a>设计基本原理：</h4><ul>
 <li>抽象</li>
 <li>模块化</li>
 <li>信息隐蔽</li>
 <li>模块独立(高内聚，低耦合)<br>  衡量模块独立程度的标准：<strong>耦合性和内聚性</strong><br>  内聚程度由低到高如下表【必考1分】<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%86%85%E8%81%9A%E7%A8%8B%E5%BA%A6%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98.png" srcset="/img/loading.gif" lazyload alt="内聚程度由低到高"><br>  耦合程度由低到高如下表【必考1分】<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E8%80%A6%E5%90%88%E7%A8%8B%E5%BA%A6%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98.png" srcset="/img/loading.gif" lazyload alt="耦合程度由低到高"></li>
 </ul>
-<p>系统结构图（SC）又称为<strong>模块结构图</strong>，它是软件概要设计阶段的工具，反映系统的功能实现和模块之间的联系与通信，<strong>包括各模块之间的层次结构，即反映了系统的总体结构</strong>。</p>
+<h4 id="系统结构图"><a href="#系统结构图" class="headerlink" title="系统结构图"></a>系统结构图</h4><p>系统结构图（SC）又称为<strong>模块结构图</strong>，它是软件概要设计阶段的工具，反映系统的功能实现和模块之间的联系与通信，<strong>包括各模块之间的层次结构，即反映了系统的总体结构</strong>。</p>
 <h2 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h2><p>详细设计的基本步骤:</p>
 <ol>
 <li>分析并确定输入&#x2F;输出数据的逻辑结构。</li>
@@ -387,7 +384,7 @@
 </ul>
 <h1 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h1><h2 id="基本过程"><a href="#基本过程" class="headerlink" title="基本过程"></a>基本过程</h2><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="面向对象设计结构图"></p>
 <h2 id="类的分类"><a href="#类的分类" class="headerlink" title="类的分类"></a>类的分类</h2><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB.png" srcset="/img/loading.gif" lazyload alt="类的分类"></p>
-<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
+<h2 id="设计原则-1"><a href="#设计原则-1" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
 <li>单一职责原则：设计<strong>目的单一</strong>的类</li>
 <li>开放-封闭原则：对扩展开放，对<strong>修改封闭</strong></li>
 <li>李氏(Liskov)替换原则：<strong>子类可以替换父类</strong></li>
