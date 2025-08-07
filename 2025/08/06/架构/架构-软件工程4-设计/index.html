@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB.png">
 <meta property="article:published_time" content="2025-08-06T13:11:00.000Z">
-<meta property="article:modified_time" content="2025-08-07T06:28:59.398Z">
+<meta property="article:modified_time" content="2025-08-07T07:04:04.079Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%B8%89%E5%A4%A7%E9%BB%84%E9%87%91%E5%8E%9F%E5%88%99.png">
@@ -318,7 +318,7 @@
                 
                 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>系统设计主要目的：为系统制定蓝图，在各种技术和实施方法中权衡利弊精心设计，合理地使用各种资源，<strong>最终勾画出新系统的详细设计方法</strong>。</p>
 <h1 id="人机界面设计"><a href="#人机界面设计" class="headerlink" title="人机界面设计"></a>人机界面设计</h1><p><strong>人机界面设计三大黄金原则</strong>：</p>
-<h3 id="置于用户控制之下"><a href="#置于用户控制之下" class="headerlink" title="置于用户控制之下"></a>置于用户控制之下</h3><ul>
+<h4 id="置于用户控制之下"><a href="#置于用户控制之下" class="headerlink" title="置于用户控制之下"></a>置于用户控制之下</h4><ul>
 <li>以不强迫用户进入不必要的或不希望的动作的方式来定义交互方式</li>
 <li>提供灵活的交互</li>
 <li>允许用户交互可以被中断和撒销</li>
@@ -326,7 +326,7 @@
 <li>使用户隔离内部技术细节</li>
 <li>设计应允许用户和出现在屏幕上的对象直接交互</li>
 </ul>
-<h3 id="减少用户的记忆负担"><a href="#减少用户的记忆负担" class="headerlink" title="减少用户的记忆负担"></a>减少用户的记忆负担</h3><ul>
+<h4 id="减少用户的记忆负担"><a href="#减少用户的记忆负担" class="headerlink" title="减少用户的记忆负担"></a>减少用户的记忆负担</h4><ul>
 <li>减少对短期记忆的要求</li>
 <li>建立有意义的缺省</li>
 <li>定义直觉性的捷径</li>
@@ -357,22 +357,21 @@
 <li><strong>内部数据</strong>：指仅供该模块本身引用的数据。</li>
 <li><strong>程序代码</strong>：指用来实现模块功能的程序。</li>
 </ul>
-<h4 id="设计基本原理："><a href="#设计基本原理：" class="headerlink" title="设计基本原理："></a>设计基本原理：</h4><ul>
+<h4 id="设计基本原理"><a href="#设计基本原理" class="headerlink" title="设计基本原理"></a>设计基本原理</h4><ul>
 <li>抽象</li>
 <li>模块化</li>
 <li>信息隐蔽</li>
 <li>模块独立(高内聚，低耦合)<br>  衡量模块独立程度的标准：<strong>耦合性和内聚性</strong><br>  内聚程度由低到高如下表【必考1分】<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%86%85%E8%81%9A%E7%A8%8B%E5%BA%A6%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98.png" srcset="/img/loading.gif" lazyload alt="内聚程度由低到高"><br>  耦合程度由低到高如下表【必考1分】<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E8%80%A6%E5%90%88%E7%A8%8B%E5%BA%A6%E7%94%B1%E4%BD%8E%E5%88%B0%E9%AB%98.png" srcset="/img/loading.gif" lazyload alt="耦合程度由低到高"></li>
 </ul>
 <h4 id="系统结构图"><a href="#系统结构图" class="headerlink" title="系统结构图"></a>系统结构图</h4><p>系统结构图（SC）又称为<strong>模块结构图</strong>，它是软件概要设计阶段的工具，反映系统的功能实现和模块之间的联系与通信，<strong>包括各模块之间的层次结构，即反映了系统的总体结构</strong>。</p>
-<h2 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h2><p>详细设计的基本步骤:</p>
-<ol>
+<h2 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h2><h4 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h4><ol>
 <li>分析并确定输入&#x2F;输出数据的逻辑结构。</li>
 <li>找出输入数据结构和输出数据结构中有对应关系的数据单元。</li>
 <li>按一定的规则由输入、输出的数据结构导出程序结构。</li>
 <li>列出基本操作与条件，并把它们分配到程序结构图的适当位置。</li>
 <li>用伪码写出程序。</li>
 </ol>
-<p>详细设计的表示工具有<strong>图形工具、表格工具和语言工具</strong>。其中图形工具有<strong>业务流图、程序流程图PAD图、NS流程图</strong>。</p>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p>详细设计的表示工具有<strong>图形工具、表格工具和语言工具</strong>。其中图形工具有<strong>业务流图、程序流程图PAD图、NS流程图</strong>。</p>
 <ul>
 <li>程序流程图又称为<strong>程序框图</strong>。用方框表示一个处理步骤，菱形表示一个逻辑条件，箭头表示控制流向。<ul>
 <li>优点：<strong>结构清晰，易于理解，易于修改</strong>。</li>
@@ -382,9 +381,9 @@
 <li>NS 流程图，也称为<strong>盒图</strong>，是一种强制使用结构化构造的图示工具，也称为方框图。其具有以下特点：<strong>功能域明确、不可能任意转移控制、很容易确定局部和全局数据的作用域、很容易表示嵌套关系及模板的层次关系</strong>。</li>
 <li>PAD 图是一种改进的图形描述方式，可以用来取代程序流程图，相比程序流程图更直观，结构更清晰。最大的优点是<strong>能够反映和描述自顶向下的历史和过程</strong>。PAD 提供了5种基本控制结构的图示，并允许递归使用。</li>
 </ul>
-<h1 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h1><h2 id="基本过程"><a href="#基本过程" class="headerlink" title="基本过程"></a>基本过程</h2><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="面向对象设计结构图"></p>
-<h2 id="类的分类"><a href="#类的分类" class="headerlink" title="类的分类"></a>类的分类</h2><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB.png" srcset="/img/loading.gif" lazyload alt="类的分类"></p>
-<h2 id="设计原则-1"><a href="#设计原则-1" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
+<h1 id="面向对象设计"><a href="#面向对象设计" class="headerlink" title="面向对象设计"></a>面向对象设计</h1><h4 id="基本过程"><a href="#基本过程" class="headerlink" title="基本过程"></a>基本过程</h4><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="面向对象设计结构图"></p>
+<h4 id="类的分类"><a href="#类的分类" class="headerlink" title="类的分类"></a>类的分类</h4><p><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%B1%BB%E7%9A%84%E5%88%86%E7%B1%BB.png" srcset="/img/loading.gif" lazyload alt="类的分类"></p>
+<h4 id="设计原则-1"><a href="#设计原则-1" class="headerlink" title="设计原则"></a>设计原则</h4><ul>
 <li>单一职责原则：设计<strong>目的单一</strong>的类</li>
 <li>开放-封闭原则：对扩展开放，对<strong>修改封闭</strong></li>
 <li>李氏(Liskov)替换原则：<strong>子类可以替换父类</strong></li>
