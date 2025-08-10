@@ -1,0 +1,842 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/img/favicon.png">
+  <link rel="icon" href="/images/img/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="砖头">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="概述系统测试是为了发现错误而执行程序的过程，成功的测试是发现了至今尚未发现的错误的测试  测试原则：  应尽早并不断的进行测试； 测试工作应该避免由原开发软件的人或小组承担； 在设计测试方案时，不仅要确定输入数据，而且要根据系统功能确定预期的输出结果； 既包含有效、合理的测试用例，也包含不合理、失效的用例； 检验程序是否做了该做的事，且是否做了不该做的事; 严格按照测试计划进行; 妥善保存测试计划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="架构-软件工程5-测试">
+<meta property="og:url" content="http://060800.xyz/2025/08/07/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B5-%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="搬砖者">
+<meta property="og:description" content="概述系统测试是为了发现错误而执行程序的过程，成功的测试是发现了至今尚未发现的错误的测试  测试原则：  应尽早并不断的进行测试； 测试工作应该避免由原开发软件的人或小组承担； 在设计测试方案时，不仅要确定输入数据，而且要根据系统功能确定预期的输出结果； 既包含有效、合理的测试用例，也包含不合理、失效的用例； 检验程序是否做了该做的事，且是否做了不该做的事; 严格按照测试计划进行; 妥善保存测试计划">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B1.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B2.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B3.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%A2%9E%E9%87%8F%E5%BC%8F%E7%BB%84%E8%A3%85.png">
+<meta property="article:published_time" content="2025-08-07T10:07:42.000Z">
+<meta property="article:modified_time" content="2025-08-10T06:27:05.195Z">
+<meta property="article:author" content="砖头">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B1.png">
+  
+  
+  
+  <title>架构-软件工程5-测试 - 搬砖者</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"060800.xyz","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"rJjbEywDPPGQPEZ4cZIgY8zl-gzGzoHsz","app_key":"pitiH8gyDZZoy2jCxdaT6eYH","server_url":"https://rjjbeywd.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>搬砖者</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/img/bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="架构-软件工程5-测试"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-07 10:07" pubdate>
+          2025年8月7日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">架构-软件工程5-测试</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>系统测试是<strong>为了发现错误而执行程序的过程，成功的测试是发现了至今尚未发现的错误的测试</strong></p>
+<blockquote>
+<p>测试原则：</p>
+<ol>
+<li>应尽早并不断的进行测试；</li>
+<li>测试工作应该避免由原开发软件的人或小组承担；</li>
+<li>在设计测试方案时，不仅要确定输入数据，而且要根据系统功能确定预期的输出结果；</li>
+<li>既包含有效、合理的测试用例，也包含不合理、失效的用例；</li>
+<li>检验程序是否做了该做的事，且是否做了不该做的事;</li>
+<li>严格按照测试计划进行;</li>
+<li>妥善保存测试计划和测试用例;</li>
+<li>测试用例可以重复使用或追加测试。</li>
+</ol>
+</blockquote>
+<h1 id="软件测试类型"><a href="#软件测试类型" class="headerlink" title="软件测试类型"></a>软件测试类型</h1><p>软件测试方法可分为<strong>静态测试</strong>和<strong>动态测试</strong>。</p>
+<h4 id="静态测试"><a href="#静态测试" class="headerlink" title="静态测试"></a>静态测试</h4><p>【<strong>静态测试</strong>】：指被测试程序<strong>不在机器上运行</strong>，而采用<strong>人工检测和计算机辅助静态分析的手段</strong>对程序进行检测，包括对文档的静态测试和对代码的静态测试。<strong>对文档的静态测试</strong>主要以检查单的形式进行，而<strong>对代码的静态测试</strong>，包括【<strong>桌前检查】、【代码审查】、【代码走查</strong>】的方式。使用这种方法能够有效地发现30%-70%的逻辑设计和编码错误。</p>
+<ul>
+<li><strong>控制流分析</strong>：是否存在没有使用的语句&#x2F;<strong>无法达到的语句</strong>&#x2F;调用并不存在的子程序。</li>
+<li><strong>数据流分析</strong>：<strong>引用未定义的变量</strong>、对以前未使用的变量再次赋值。</li>
+<li><strong>接口分析</strong>：模块之间<strong>接口的一致性</strong>、子程序和函数之间的接口一致性、函数形参与实参的数量、顺序、类型的一致性。</li>
+<li><strong>表达式分析</strong>：<strong>括号不配对</strong>、数组引用越界、除数为零。</li>
+</ul>
+<h4 id="动态测试"><a href="#动态测试" class="headerlink" title="动态测试"></a>动态测试</h4><p>【<strong>动态测试</strong>】：指在计算机上<strong>实际运行程序</strong>进行软件测试，一般采用<strong>白盒测试</strong>和<strong>黑盒测试</strong>方法。</p>
+<ul>
+<li>黑盒测试：<strong>功能性测试</strong>，不了解软件代码结构，根据功能设计用例，测试软件功能。</li>
+<li>灰盒测试</li>
+<li>白盒测试：<strong>结构性测试</strong>，明确代码流程，根据代码逻辑设计用例，进行用例覆盖。</li>
+</ul>
+<h1 id="测试用例设计"><a href="#测试用例设计" class="headerlink" title="测试用例设计"></a>测试用例设计</h1><h3 id="黑盒测试用例"><a href="#黑盒测试用例" class="headerlink" title="黑盒测试用例"></a>黑盒测试用例</h3><p><strong>黑盒测试用例</strong>：将程序看做一个黑盒子，只知道输入输出，不知道内部代码，由此设计出测试用例，分为下面几类：</p>
+<ul>
+<li>等价类划分：把所有的数据按照某种特性进行归类，而后在每类的数据里选取一个即可。<ul>
+<li>等价类测试用例的设计原则：<strong>设计一个新的测试用例，使其尽可能多地覆盖尚未被覆盖的有效等价类</strong>，重复这一步，直到所有的有效等价类都被覆盖为止；<strong>设计一个新的测试用例，使其仅盖一个尚未被覆盖的无效等价类</strong>，重复这一步，直到所有的无效等价类都被覆盖为止。</li>
+</ul>
+</li>
+<li>边界值划分：将每类的边界值作为测试用例，边界值一般为<strong>范围的两端值以及在此范围之外的与此范围间隔最小的两个值</strong>，如年龄范围为0-150，边界值为0.150，-1.151四个。</li>
+<li>错误推测：没有固定的方法，凭经验而言，来推测有可能产生问题的地方作为测试用例进行测试。</li>
+<li>因果图：由一个结果来反推原因的方法，具体结果具体分析，没有固定方法。</li>
+<li>错误推测：</li>
+<li>判定表：最适合描述在多个逻辑条件取值组合所构成的负载情况下，分别要执行哪些不同的动作</li>
+</ul>
+<h3 id="白盒测试用例"><a href="#白盒测试用例" class="headerlink" title="白盒测试用例"></a>白盒测试用例</h3><p><strong>白盒测试用例</strong>：知道程序的代码逻辑，按照程序的代码语句，来设计覆盖代码分支的测试用例，主要用于<strong>单元测试阶段</strong>。可分为：<strong>控制流测试、数据流测试、程序变异测试（错误驱动测试）</strong><br>控制流测试：覆盖级别从低至高分为下面几种：</p>
+<ol>
+<li><strong>语句覆盖SC</strong>：逻辑代码中的<strong>所有语句都要被执行一遍，覆盖层级最低</strong>，因为执行了所有的语句，不代表执行了所有的条件判断。</li>
+<li><strong>判定覆盖DC</strong>：逻辑代码中的<strong>所有判断语句的条件的真假分支都要覆盖一次</strong></li>
+<li><strong>条件覆盖CC</strong>：针对每一个判断条件内的**每一个独立条件都要执行一遍真和假；</li>
+<li><strong>条件判定组合覆盖CDC</strong>：<strong>同时满足判定覆盖和条件覆盖</strong></li>
+<li><strong>路径覆盖</strong>：逻辑代码中的<strong>所有可行路径都覆盖了，覆盖层级最高</strong><br><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B1.png" srcset="/img/loading.gif" lazyload alt="白盒测试用例1"><br><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B2.png" srcset="/img/loading.gif" lazyload alt="白盒测试用例3"><br><img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B3.png" srcset="/img/loading.gif" lazyload alt="白盒测试用例3"></li>
+</ol>
+<p><strong>MrCabe度量法</strong><br>McCabe度量法：又称为<strong>环路复杂度</strong>，以程序流程图为基础，有三种计算公式：</p>
+<ol>
+<li>边数-顶点数+2</li>
+<li>封闭区域个数+1</li>
+<li><strong>判定节点个数+1（推荐使用方法)</strong></li>
+</ol>
+<h1 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h1><h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><p>也称为<strong>模块测试</strong>，测试的对象是<strong>可独立编译或汇编的程序模块</strong>、软件构件或OO软件中的类(统称为模块)，测试<strong>依据是软件【详细设计说明书】</strong>。<br>主要是对该软件的模块进行测试，通过测试以发现该模块的功能不符合&#x2F;不满足期望的情况和编码错误。<br>由于模块的规模不大，功能单一，结构较简单，且测试人员可通过阅读源程序清楚知道其逻辑结构：</p>
+<ul>
+<li><strong>首先应通过静态测试方法</strong>，比如静态分析、代码审查等，对该模块的源程序进行分析，按照模块的程序设计的控制流程图，以满足软件覆盖率要求的逻辑测试要求。</li>
+<li>另外，<strong>也可采用黑盒测试方法提出一组基本的测试用例，再用白盒测试方法进行验证</strong>。若用黑盒测试方法所产生的测试用例满足不了软件的覆盖要求，可采用白盒法增补出新的测试用例，以满足所需的盖标准。其所需的覆盖标准应视模块的实际具体情况而定。对一些质量要求和可靠性要求较高的模块，一般要满足所需条件的组合覆盖或者路径覆盖标准。</li>
+</ul>
+<h4 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h4><p>目的是<strong>检查模块之间，以及模块和已集成的软件之间的接口关系</strong>，并验证已集成的软件是否符合设计要求。测试<strong>依据是软件【概要设计文档】</strong>，集成测试通常要对已经严格按照程序设计要求和标准<strong>组装起来的模块同时进行测试</strong>，明确该程序结构组装的正确性，发现和<strong>接口</strong>有关的问题。</p>
+<ul>
+<li>在这一阶段，一般采用<strong>白盒测试和黑盒测试</strong>结合的方法进行测试，验证这一阶段设计的合理性以及需求功能的实现性。<br>集成测试策略：<br>  一次性组装【风险高】<br>  增量式组装【测试全面】<br>  自顶向下【需要桩模块】<br>  自底向上【需要驱动模块】<br>  混合式【桩模块和驱动模块都需要】<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E5%A2%9E%E9%87%8F%E5%BC%8F%E7%BB%84%E8%A3%85.png" srcset="/img/loading.gif" lazyload alt="增量式组装"></li>
+</ul>
+<h4 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h4><p>依据【需求文档】。</p>
+<ul>
+<li>本阶段的主要测试内容包括<strong>功能测试、性能测试、健壮性测试、安装或反安装测试、用户界面测试、压力测试、可靠性及安全性测试</strong>等。一般情况下，系统测试采用<strong>黑盒测试</strong>，以此来检查该系统是否符合软件需求。</li>
+<li>测试人员必须进行<strong>多轮回归测试</strong>。</li>
+<li>系统测试的结束标志是<strong>测试工作已满足测试目标所规定的需求覆盖率，并且测试所发现的缺陷都已全部归零</strong>。</li>
+</ul>
+<ol>
+<li>【性能测试】：是通过<strong>自动化的测试工具模拟多种正常、峰值以及异常负载条件来对系统的各项性能指标进行测试</strong>。<ul>
+<li>负载测试：各种工作负载下系统的性能</li>
+<li>压力测试【测上限】：系统的瓶颈或不能接受的性能点</li>
+<li>强度测试【测下限】：系统资源特别低的情况下运行</li>
+<li>容量测试【并发测试】：同时在线的最大用户数</li>
+<li>可靠性测试：MTTF之类的参数</li>
+</ul>
+<ol>
+<li><strong>负载测试和压力测试</strong>都属于性能测试，两者可以结合进行。</li>
+<li>通过负载测试，确定在各种工作负载下系统的性能，目标是测试当负载逐渐增加时，系统各项性能指标的变化情况。</li>
+<li>压力测试是通过确定一个系统的瓶颈或者不能接受的性能点，<strong>来获得系统能提供的最大服务级别的测试</strong></li>
+</ol>
+</li>
+<li>【验收测试】，属于确认测试的一种。主要用于<strong>验证软件的功能、性能和其他特性是否与用户需求一致</strong>。根据用户的参与程度，通常包括以下类型：<ol>
+<li>内部确认测试：主要由<strong>软件开发组织内部按照SRS进行测试</strong>。</li>
+<li>Alpha测试：用户在开发环境下进行测试。</li>
+<li>Beta测试：用户在实际使用环境下进行测试，通过该测试后，产品才能交付用户。</li>
+<li>验收测试：在真实的用户工作环境下，检验软件系统是否满足开发技术合同或SRS。</li>
+</ol>
+</li>
+</ol>
+<h4 id="其他测试"><a href="#其他测试" class="headerlink" title="其他测试"></a>其他测试</h4><p> <strong>AB 测试是为Web 或App 界面或流程制作两个或多个版本</strong>，在同一时间维度，分别让组成成分相同(相似)的访客群组(目标人群)随机的访问这些版本，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</p>
+<p>Web测试是软件测试的一部分，<strong>是针对web 应用的一类测试</strong>。由于Web 应用与用户直接相关，又通常需要承受长时间的大量操作，因此Web项目的功能和性能都必须经过可靠的验证。</p>
+<p>链接测试。链接是Web应用系统的一个主要特征，它是在页面之间切换和指导用户去一些未知地址页面的主要手段。链接测试可分为3个方面。首先，<strong>测试所有链接是否按指示那样确实链接到了该链接的页面:其次，测试所链接的页面是否存在:最后，保证Web 应用系统上没有孤立的页面</strong>。</p>
+<p>表单测试。当<strong>用户通过表单提交信息的时候</strong>，都希望表单能正常工作。如果使用表单来进行在线注册，要确保<strong>提交按钮能正常工作，当注册完成后应返回注册成功的消息</strong>。如果使用表单收集配送信息，应确保程序能够正确处理这些数据，最后能让用户收到信息。</p>
+<p>回归测试：测试目的是<strong>测试软件变更之后，变更部分的正确性和对变更需求的符合性，以及软件原有的、正确的功能、性能和其他规定的要求的不损害性</strong>。</p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><p>自动化测试：<br>先写脚本–&gt;自动化执行<br>不适合场景：项目周期短、需求变动频繁<br>自动化测试工具主要使用脚本技术来生成测试用例，脚本是一组测试工具执行的指令集合。</p>
+<p>脚本的基本结构主要有五种：</p>
+<ul>
+<li>线性脚本是录制手工测试的测试用例时得到的脚本；</li>
+<li>结构化脚本具有各种逻辑结构和函数调用功能；</li>
+<li>共享脚本是指一个脚本可以被多个测试用例使 用；</li>
+<li>数据驱动脚本是指将测试输入存储在独立的数据文件中，而不是脚本中；</li>
+<li>关键字驱动脚本是数据驱动脚本的逻辑扩展，用测试文件描述测试用例。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E8%80%83/" class="category-chain-item">软考</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>架构-软件工程5-测试</div>
+      <div>http://060800.xyz/2025/08/07/架构/架构-软件工程5-测试/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>砖头</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/08/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B6-%E8%BF%90%E8%A1%8C%E7%BB%B4%E6%8A%A4/" title="架构-软件工程6-运行维护">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">架构-软件工程6-运行维护</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/06/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B4-%E8%AE%BE%E8%AE%A1/" title="架构-软件工程4-设计">
+                        <span class="hidden-mobile">架构-软件工程4-设计</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"rJjbEywDPPGQPEZ4cZIgY8zl-gzGzoHsz","appKey":"pitiH8gyDZZoy2jCxdaT6eYH","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://rjjbeywd.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"avatar_cdn":"https://cravatar.cn/avatar/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
