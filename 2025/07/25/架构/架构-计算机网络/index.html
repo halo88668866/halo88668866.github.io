@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/RAID+X.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/NAS%E5%92%8CSAN%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84.png">
 <meta property="article:published_time" content="2025-07-25T23:36:50.000Z">
-<meta property="article:modified_time" content="2025-08-14T02:28:10.151Z">
+<meta property="article:modified_time" content="2025-08-14T09:07:23.654Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%88%86%E5%B8%83%E8%8C%83%E5%9B%B4%E5%92%8C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png">
@@ -263,7 +263,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.4k 字
+          5.7k 字
         
       </span>
     
@@ -274,7 +274,7 @@
         
         
         
-          45 分钟
+          48 分钟
         
       </span>
     
@@ -430,7 +430,17 @@
 <ul>
 <li>TFTP：不可靠的、开销不大的小文件传输协议。</li>
 <li>SNMP：简单网络管理协议，由一组网络管理的标准协议，包含一个应用层协议、数据库模型和一组资源对象。该协议能够支持网络管理系统，泳衣监测连接到网络上的设备是否有任何引起管理师行关注的情况。</li>
-<li>DHCP：动态主机配置协议，基于UDP,基于C&#x2F;S模型，为主机动态分配IP地址，有三种方式：<strong>固定分配、动态分配、自动分配</strong>。</li>
+<li>DHCP：动态主机配置协议，基于UDP,基于C&#x2F;S模型，为主机动态分配IP地址，有三种方式：<strong>固定分配、动态分配、自动分配</strong>。<ul>
+<li>DHCP DISCOVER ：客户端开始DHCP过程发送的包，是DHCP协议的开始</li>
+<li>DHCP OFFER ：服务器接收到DHCP DISCOVER之后做出的响应，它包括了给予客户端的IP（yiaddr）、客户端的MAC地址、租约过期时间、服务器的识别符以及其他信息</li>
+<li>DHCP REQUEST ：客户端对于服务器发出的DHCP OFFER所做出的响应。在续约租期的时候同样会使用。</li>
+<li>DHCP ACK ：服务器在接收到客户端发来的DHCP REQUEST之后发出的成功确认的报文。在建立连接的时候，客户端在接收到这个报文之后才会确认分配给它的IP和其他信息可以被允许使用。</li>
+<li>DHCP NAK ：DHCP ACK的相反的报文，表示服务器拒绝了客户端的请求。</li>
+<li>DHCP RELEASE ：一般出现在客户端关机、下线等状况。这个报文将会使DHCP服务器释放发出此报文的客户端的IP地址</li>
+<li>DHCP INFORM ：客户端发出的向服务器请求一些信息的报文</li>
+<li>DHCP DECLINE :当客户端发现服务器分配的IP地址无法使用（如IP地址冲突时），将发出此报文，通知服务器禁止使用该IP地址。</li>
+</ul>
+</li>
 <li>DNS：域名解析协议，通过域名解析出IP地址。<br><strong>协议和端口</strong><br><img src="/images/%E6%9E%B6%E6%9E%84-%E7%BD%91%E7%BB%9C/%E5%8D%8F%E8%AE%AE%E5%92%8C%E7%AB%AF%E5%8F%A3.png" srcset="/img/loading.gif" lazyload alt="协议和端口"></li>
 </ul>
 <h1 id="网络技术"><a href="#网络技术" class="headerlink" title="网络技术"></a>网络技术</h1><h2 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h2><p>数据在网络中<strong>转发</strong>离不开<strong>交换机</strong>。计算机通常通过交换机接入网络<br>交换机功能：</p>
