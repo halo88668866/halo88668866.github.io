@@ -19,12 +19,12 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="软件架构概述软件架构风格软件架构复用DSSAABSD质量属性架构评估 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的优点，管理员可直接管理开发人员所构建的相同服务">
+    <meta name="description" content="【参考：SOA的ESB总线和微服务的网关感觉差不多啊，为什么很多人说微服务和SOA之间就差了个ESB？ - 知乎】 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="架构-架构设计3-经典架构风格">
+<meta property="og:title" content="架构-架构设计3.2-面向服务的架构风格">
 <meta property="og:url" content="http://060800.xyz/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13.2-%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="软件架构概述软件架构风格软件架构复用DSSAABSD质量属性架构评估 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的优点，管理员可直接管理开发人员所构建的相同服务">
+<meta property="og:description" content="【参考：SOA的ESB总线和微服务的网关感觉差不多啊，为什么很多人说微服务和SOA之间就差了个ESB？ - 知乎】 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/WEB%E6%9C%8D%E5%8A%A1.png">
@@ -32,14 +32,14 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Web-Service.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ESB.png">
 <meta property="article:published_time" content="2025-08-18T00:17:43.000Z">
-<meta property="article:modified_time" content="2025-08-18T00:43:33.995Z">
+<meta property="article:modified_time" content="2025-08-18T01:36:18.297Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png">
   
   
   
-  <title>架构-架构设计3-经典架构风格 - 搬砖者</title>
+  <title>架构-架构设计3.2-面向服务的架构风格 - 搬砖者</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="架构-架构设计3-经典架构风格"></span>
+            <span id="subtitle" data-typed-text="架构-架构设计3.2-面向服务的架构风格"></span>
           
         </div>
 
@@ -310,15 +310,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">架构-架构设计3-经典架构风格</h1>
+            <h1 id="seo-header">架构-架构设计3.2-面向服务的架构风格</h1>
             
             
               <div class="markdown-body">
                 
-                <p>软件架构概述<br>软件架构风格<br>软件架构复用<br>DSSA<br>ABSD<br>质量属性<br>架构评估</p>
+                <p>【参考：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/277134654/answer/1938288899974755782">SOA的ESB总线和微服务的网关感觉差不多啊，为什么很多人说微服务和SOA之间就差了个ESB？ - 知乎</a>】</p>
 <h1 id="SOA概念"><a href="#SOA概念" class="headerlink" title="SOA概念"></a>SOA概念</h1><p>SOA是一种<strong>粗粒度、松耦合</strong>服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。</p>
 <p>在SOA中，<strong>服务是一种为了满足某项业务需求的操作、规则等的逻辑组合</strong>，它包含一系列有序活动的交互，为实现用户目标提供支持。</p>
-<p>SOA并不仅仅是一种开发方法，还具有管理上的优点，<strong>管理员可直接管理开发人员所构建的相同服务</strong>。多个服务通过<strong>企业服务总线提出服务请求</strong>，由应用管理来进行处理，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="SOA架构"><br>实施SOA的关键目标是<strong>实现企业IT资产重用的最大化</strong>，</p>
+<p>SOA并不仅仅是一种开发方法，还具有管理上的优点，<strong>管理员可直接管理开发人员所构建的相同服务</strong>。多个服务通过<strong>企业服务总线（ESB）提出服务请求</strong>，由应用管理来进行处理，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="SOA架构"><br>实施SOA的关键目标是<strong>实现企业IT资产重用的最大化</strong>，</p>
 <blockquote>
 <p>在实施SOA过程中要牢记以下特征：</p>
 <ol>
@@ -358,8 +358,8 @@
 </ol>
 </li>
 </ol>
-<h1 id="实现形式"><a href="#实现形式" class="headerlink" title="实现形式"></a>实现形式</h1><h4 id="WEB-Service"><a href="#WEB-Service" class="headerlink" title="WEB Service"></a>WEB Service</h4><p><strong>服务提供者、服务注册中心(中介，提供交易平台，可有可无)、服务请求者</strong>。服务提供者将服务描述发布到服务注册中心，供服务请求者查找，查找到后，服务请求者将绑定查找结果。如图：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Web-Service.png" srcset="/img/loading.gif" lazyload alt="Web Service"><br>服务注册表：</p>
-<ol>
+<h1 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h1><h4 id="WEB-Service"><a href="#WEB-Service" class="headerlink" title="WEB Service"></a>WEB Service</h4><p><strong>服务提供者、服务注册中心(中介，提供交易平台，可有可无)、服务请求者</strong>。服务提供者将服务描述发布到服务注册中心，供服务请求者查找，查找到后，服务请求者将绑定查找结果。如图：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Web-Service.png" srcset="/img/loading.gif" lazyload alt="Web Service"></p>
+<h4 id="服务注册表"><a href="#服务注册表" class="headerlink" title="服务注册表"></a>服务注册表</h4><ol>
 <li><strong>服务注册</strong>：应用开发者(服务提供者)在注册表中公布服务的功能。</li>
 <li><strong>服务位置</strong>：服务使用者(服务应用开发者)，帮助他们查询注册服务，寻找符合自身要求的服务</li>
 <li><strong>服务绑定</strong>：服务使用者利用检索到的服务接口来编写代码，所编写的代码将与注册的服务绑定，调用注册的服务，以及与它们实现互动。</li>
@@ -412,7 +412,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>架构-架构设计3-经典架构风格</div>
+      <div>架构-架构设计3.2-面向服务的架构风格</div>
       <div>http://060800.xyz/2025/08/18/架构/架构-架构设计3.2-面向服务的架构风格/</div>
     </div>
     <div class="license-meta">
