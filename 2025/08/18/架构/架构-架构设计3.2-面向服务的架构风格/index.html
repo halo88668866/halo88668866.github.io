@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/img/favicon.png">
+  <link rel="icon" href="/images/img/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="砖头">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="软件架构概述软件架构风格软件架构复用DSSAABSD质量属性架构评估 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的优点，管理员可直接管理开发人员所构建的相同服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="架构-架构设计3-经典架构风格">
+<meta property="og:url" content="http://060800.xyz/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13.2-%E9%9D%A2%E5%90%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/index.html">
+<meta property="og:site_name" content="搬砖者">
+<meta property="og:description" content="软件架构概述软件架构风格软件架构复用DSSAABSD质量属性架构评估 SOA概念SOA是一种粗粒度、松耦合服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。 在SOA中，服务是一种为了满足某项业务需求的操作、规则等的逻辑组合，它包含一系列有序活动的交互，为实现用户目标提供支持。 SOA并不仅仅是一种开发方法，还具有管理上的优点，管理员可直接管理开发人员所构建的相同服务">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/WEB%E6%9C%8D%E5%8A%A1.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOAP%E5%BD%A2%E5%BC%8F.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Web-Service.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ESB.png">
+<meta property="article:published_time" content="2025-08-18T00:17:43.000Z">
+<meta property="article:modified_time" content="2025-08-18T00:43:33.995Z">
+<meta property="article:author" content="砖头">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png">
+  
+  
+  
+  <title>架构-架构设计3-经典架构风格 - 搬砖者</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"060800.xyz","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"rJjbEywDPPGQPEZ4cZIgY8zl-gzGzoHsz","app_key":"pitiH8gyDZZoy2jCxdaT6eYH","server_url":"https://rjjbeywd.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>搬砖者</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/img/bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="架构-架构设计3-经典架构风格"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-18 00:17" pubdate>
+          2025年8月18日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">架构-架构设计3-经典架构风格</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>软件架构概述<br>软件架构风格<br>软件架构复用<br>DSSA<br>ABSD<br>质量属性<br>架构评估</p>
+<h1 id="SOA概念"><a href="#SOA概念" class="headerlink" title="SOA概念"></a>SOA概念</h1><p>SOA是一种<strong>粗粒度、松耦合</strong>服务架构，服务之间通过简单、精确定义接口进行通信，不涉及底层编程接口和通信模型。</p>
+<p>在SOA中，<strong>服务是一种为了满足某项业务需求的操作、规则等的逻辑组合</strong>，它包含一系列有序活动的交互，为实现用户目标提供支持。</p>
+<p>SOA并不仅仅是一种开发方法，还具有管理上的优点，<strong>管理员可直接管理开发人员所构建的相同服务</strong>。多个服务通过<strong>企业服务总线提出服务请求</strong>，由应用管理来进行处理，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOA%E6%9E%B6%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="SOA架构"><br>实施SOA的关键目标是<strong>实现企业IT资产重用的最大化</strong>，</p>
+<blockquote>
+<p>在实施SOA过程中要牢记以下特征：</p>
+<ol>
+<li>**可从企业外部访问、</li>
+<li>随时可用(服务请求能被及时响应)、</li>
+<li>粗粒度接口**（粗粒度提供一项特定的业务功能，而细粒度服务代表了技术构件方法）、</li>
+<li>**服务分级、</li>
+<li>松散耦合**(服务提供者和服务使用者分离)、</li>
+<li>**可重用的服务及服务接口设计管理、</li>
+<li>标准化的接口**(WSDL、SOAP、XML是核心)</li>
+<li>**支持各种消息模式、</li>
+<li>精确定义的服务接口**</li>
+</ol>
+</blockquote>
+<p>从基于对象到基于构件再到基于服务，<strong>架构越来越松散耦合，粒度越来越粗接口，越来越标准</strong>。</p>
+<p>基于服务的构件与传统构件的区别有四点：</p>
+<ol>
+<li>服务构件<strong>粗粒度</strong>，传统构件细粒度居多；</li>
+<li>服务构件的<strong>接口是标准的，主要是WSDL接口</strong>，而传统构件常以具体API形式出现；</li>
+<li>服务构件的<strong>实现与语言是无关的</strong>，而传统构件常绑定某种特定的语言</li>
+<li>服务构件可以<strong>通过构件容器提供QoS的服务</strong>，而传统构件完全由程序代码直接控制。</li>
+</ol>
+<h1 id="主要协议与技术"><a href="#主要协议与技术" class="headerlink" title="主要协议与技术"></a>主要协议与技术</h1><p>【参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/applerosa/p/6001270.html">WebService,ESB笔记 - 世间草木 - 博客园</a>】<br>Web服务最基本的协议包括<strong>UDDI、WSDL和SOAP</strong>，通过它们，可以提供直接而又简单的Web Service 支持如图所示。<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/WEB%E6%9C%8D%E5%8A%A1.png" srcset="/img/loading.gif" lazyload alt="WEB服务"></p>
+<ol>
+<li><strong>UDDI(统一描述、发现和集成协议</strong>)计划是一个广泛的、开放的行业计划，它使得<strong>商业实体能够彼此发现</strong>；定义它们怎样在Internet上互相作用，并在一个全球的<strong>注册体系架构中共享信息</strong>。</li>
+<li><strong>WSDL(web 服务描述语言，Web Services Description Language</strong>)，是一个用来<strong>描述Web服务和说明如何与Web服务通信的XML语言</strong>。可描述三个基本属性：<ol>
+<li>**服务做些什么——服务所提供的操作(方法)</li>
+<li>**如何访问服务——和服务交互的数据格式以及必要协议。</li>
+<li><strong>服务位于何处协议相关的地址，如URL</strong>。<br> WSDL文档以<strong>端口集合</strong>的形式来描述Web 服务，WSDL服务描述包含对<strong>一组操作和消息的一个抽象定义，绑定到这些操作和消息的一个具体协议，和这个绑定的一个网络端点规范</strong>。WSDL文档被分为两种类型：<strong>服务接口和服务实现</strong>。</li>
+</ol>
+</li>
+<li>SOAP（Simple Object Access Protocol）是<strong>在分散或分布式的环境中交换信息的简单的协议</strong>，是一个<strong>基于XML</strong>的协议。它包括4个部分：<ol>
+<li><strong>SOAP封装</strong>,定义了一个描述消息中的内容是什么，是谁发送的，谁应当接收并处理它以及如何处理它们的框架;</li>
+<li><strong>SOAP编码规则</strong>,用于表示应用程序需要使用的数据类型的实例;</li>
+<li><strong>SOAP RPC</strong>表示是远程过程调用和应答的协定;</li>
+<li><strong>SOAP绑定</strong>是使用底层协议交换信息。<br> SOAP 的两个主要设计目标是<strong>简单性和可扩展性</strong>，这就意味着有一些传统消息系统或分布式对象系统中的某些性质将不是SOAP 规范的一部分。<br> <img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/SOAP%E5%BD%A2%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="SOAP形式"></li>
+</ol>
+</li>
+</ol>
+<h1 id="实现形式"><a href="#实现形式" class="headerlink" title="实现形式"></a>实现形式</h1><h4 id="WEB-Service"><a href="#WEB-Service" class="headerlink" title="WEB Service"></a>WEB Service</h4><p><strong>服务提供者、服务注册中心(中介，提供交易平台，可有可无)、服务请求者</strong>。服务提供者将服务描述发布到服务注册中心，供服务请求者查找，查找到后，服务请求者将绑定查找结果。如图：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/Web-Service.png" srcset="/img/loading.gif" lazyload alt="Web Service"><br>服务注册表：</p>
+<ol>
+<li><strong>服务注册</strong>：应用开发者(服务提供者)在注册表中公布服务的功能。</li>
+<li><strong>服务位置</strong>：服务使用者(服务应用开发者)，帮助他们查询注册服务，寻找符合自身要求的服务</li>
+<li><strong>服务绑定</strong>：服务使用者利用检索到的服务接口来编写代码，所编写的代码将与注册的服务绑定，调用注册的服务，以及与它们实现互动。</li>
+</ol>
+<h4 id="企业服务总线ESB"><a href="#企业服务总线ESB" class="headerlink" title="企业服务总线ESB"></a>企业服务总线ESB</h4><p>简单来说是<strong>一根管道，用来连接各个服务节点</strong>。ESB的存在是<strong>为了集成基于不同协议的不同服务，ESB 做了消息的转化、解释以及路由的工作，以此来让不同的服务互联互通</strong>。<br>包括：客户端(服务请求者)、基础架构服务(中间件)、核心集成服务(提供服务)</p>
+<blockquote>
+<p>ESB特点：</p>
+<ol>
+<li>SOA的一种实现方式，ESB在面向服务的架构中起到的是<strong>总线作用</strong>，将各种服务进行连接与整合</li>
+<li>描述<strong>服务的元数据和服务注册管理</strong>,</li>
+<li>在服务请求者和提供者之间<strong>传递数据，以及对这些数据进行转换的能力</strong>，并支持由实践中总结出来的一些模式如同步模式、异步模式等;</li>
+<li><strong>发现、路由、匹配和选择的能力</strong>，以支持服务之间的动态交互，解耦服务请求者和服务提供者。高级一些的能力，包括对安全的支持、服务质量保证、可管理性和负载平衡等。<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ESB.png" srcset="/img/loading.gif" lazyload alt="ESB"></li>
+</ol>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E8%80%83/" class="category-chain-item">软考</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>架构-架构设计3-经典架构风格</div>
+      <div>http://060800.xyz/2025/08/18/架构/架构-架构设计3.2-面向服务的架构风格/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>砖头</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13.1-%E5%B1%82%E6%AC%A1%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" title="架构-架构设计3-经典架构风格">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">架构-架构设计3-经典架构风格</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/17/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A12-%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/" title="架构-架构设计2-架构风格">
+                        <span class="hidden-mobile">架构-架构设计2-架构风格</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"rJjbEywDPPGQPEZ4cZIgY8zl-gzGzoHsz","appKey":"pitiH8gyDZZoy2jCxdaT6eYH","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://rjjbeywd.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"avatar_cdn":"https://cravatar.cn/avatar/"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
