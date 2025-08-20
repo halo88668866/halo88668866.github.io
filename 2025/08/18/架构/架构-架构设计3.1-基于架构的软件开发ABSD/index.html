@@ -19,31 +19,26 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="函数依赖给定一个X，能唯一确定一个Y，就称X确定Y，或者说Y依赖于X，例如Y&#x3D;X* X函数两个规则：  完全函数依赖： 部分函数依赖：A可确定C，（A，B）也可确定C，（A，B）中的一部分（即A）可以确定C，成为部分函数依赖 传递函数依赖：当A和B不等价时，A可确定B，B可确定C，则A可确定C，是传递函数依赖；若A和B等价，则不存在传递，直接可确定C。    公理系统设关系模式R&lt;">
+    <meta name="description" content="概述ABSD-Architecture-Based Software DesignABSD方法是架构驱动，强调由业务（商业）、质量和功能需求的组合驱动架构设计。”它强调采用视角和视图来描述软件架构，采用用例和质量属性场景来描述需求。这进一步来说，用例描述的是功能需求，质量属性场景描述的是质量需求(或侧重于非功能需求) 使用ABSD方法，设计活动可以从项目总体功能框架明确就开始，这意味着需求获取和分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="架构-数据库系统2-规范化和并发控制">
-<meta property="og:url" content="http://060800.xyz/2025/07/22/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F2-%E8%A7%84%E8%8C%83%E5%8C%96%E5%92%8C%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/index.html">
+<meta property="og:title" content="架构-架构设计3.1-基于架构的软件开发ABSD">
+<meta property="og:url" content="http://060800.xyz/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13.1-%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91ABSD/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="函数依赖给定一个X，能唯一确定一个Y，就称X确定Y，或者说Y依赖于X，例如Y&#x3D;X* X函数两个规则：  完全函数依赖： 部分函数依赖：A可确定C，（A，B）也可确定C，（A，B）中的一部分（即A）可以确定C，成为部分函数依赖 传递函数依赖：当A和B不等价时，A可确定B，B可确定C，则A可确定C，是传递函数依赖；若A和B等价，则不存在传递，直接可确定C。    公理系统设关系模式R&lt;">
+<meta property="og:description" content="概述ABSD-Architecture-Based Software DesignABSD方法是架构驱动，强调由业务（商业）、质量和功能需求的组合驱动架构设计。”它强调采用视角和视图来描述软件架构，采用用例和质量属性场景来描述需求。这进一步来说，用例描述的是功能需求，质量属性场景描述的是质量需求(或侧重于非功能需求) 使用ABSD方法，设计活动可以从项目总体功能框架明确就开始，这意味着需求获取和分">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%83%A8%E5%88%86_%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%91%98%E5%B7%A5%E8%A1%A8.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%AE%9E%E4%BE%8B.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/BC%E8%8C%83%E5%BC%8F.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3-%E6%97%A0%E6%8D%9F%E5%88%86%E8%A7%A3.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%80%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%BA%8C%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%89%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png">
-<meta property="article:published_time" content="2025-07-22T23:32:24.000Z">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ABSD%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E9%9C%80%E6%B1%82%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ABSD%E5%AE%9E%E7%8E%B0-%E6%BC%94%E5%8C%96%E5%9B%BE.png">
+<meta property="article:published_time" content="2025-08-18T09:41:43.000Z">
 <meta property="article:modified_time" content="2025-08-20T01:25:55.929Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%83%A8%E5%88%86_%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96.png">
+<meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ABSD%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4.png">
   
   
   
-  <title>架构-数据库系统2-规范化和并发控制 - 搬砖者</title>
+  <title>架构-架构设计3.1-基于架构的软件开发ABSD - 搬砖者</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -234,7 +229,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="架构-数据库系统2-规范化和并发控制"></span>
+            <span id="subtitle" data-typed-text="架构-架构设计3.1-基于架构的软件开发ABSD"></span>
           
         </div>
 
@@ -245,8 +240,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-22 23:32" pubdate>
-          2025年7月22日 晚上
+        <time datetime="2025-08-18 09:41" pubdate>
+          2025年8月18日 上午
         </time>
       </span>
     
@@ -257,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          809 字
         
       </span>
     
@@ -268,7 +263,7 @@
         
         
         
-          18 分钟
+          7 分钟
         
       </span>
     
@@ -314,84 +309,41 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">架构-数据库系统2-规范化和并发控制</h1>
+            <h1 id="seo-header">架构-架构设计3.1-基于架构的软件开发ABSD</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h1><p>给定一个X，能唯一确定一个Y，就称X确定Y，或者说Y依赖于X，例如Y&#x3D;X* X函数<br>两个规则：</p>
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>ABSD-Architecture-Based Software Design<br>ABSD方法是<strong>架构驱动</strong>，强调<strong>由业务（商业）、质量和功能需求的组合驱动架构设计</strong>。”它强调采用<strong>视角和视图来描述软件架构</strong>，采用<strong>用例和质量属性场景来描述需求</strong>。这进一步来说，用例描述的是功能需求，质量属性场景描述的是质量需求(或侧重于非功能需求)</p>
+<p>使用ABSD方法，<strong>设计活动可以从项目总体功能框架明确就开始</strong>，这意味着需求获取和分析还没有完成，就开始了软件设计。</p>
+<blockquote>
+<p>视角与视图：从不同的视角来检查，所以会有不同的视图。<br>用例用来捕获功能需求、特定场景【刺激、环境、响应】用来捕获质量需求。</p>
+</blockquote>
+<h4 id="三个基础。"><a href="#三个基础。" class="headerlink" title="三个基础。"></a>三个基础。</h4><ul>
+<li><strong>第一个基础是功能的分解</strong>，使用已有的基于块的内聚和合技术;</li>
+<li><strong>第二个基础是通过选择架构风格来实现质量和业务需求</strong>:</li>
+<li><strong>第三个基础是软件模板的使用</strong>，软件模板利用了一些软件系统的结构。</li>
+</ul>
+<h1 id="开发方法"><a href="#开发方法" class="headerlink" title="开发方法"></a>开发方法</h1><p>是一个<strong>自顶向下、递归细化</strong>的方法：</p>
 <ul>
-<li>完全函数依赖：</li>
-<li>部分函数依赖：A可确定C，（A，B）也可确定C，<strong>（A，B）中的一部分（即A）可以确定C</strong>，成为部分函数依赖</li>
-<li>传递函数依赖：当A和B不等价时，<strong>A可确定B，B可确定C，则A可确定C</strong>，是传递函数依赖；若A和B等价，则不存在传递，直接可确定C。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%83%A8%E5%88%86_%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96.png" srcset="/img/loading.gif" lazyload alt="部分_传递函数依赖"></li>
+<li>在最顶层，系统被分解为<strong>若干概念子系统和一个或若干个软件模板</strong>。</li>
+<li>在第2层，概念子系统又被分解成<strong>概念构件和一个或若干个附加软件模板</strong>。</li>
 </ul>
-<p><strong>公理系统</strong><br>设关系模式R&lt;U，F&gt;，U是关系模式R的属性全集，F是关系模式R的一个函数依赖集。<br>对于R&lt;U，F&gt;来说有以下：</p>
+<blockquote>
+<p>ABSD能很好的【<strong>支持软件重用</strong>】<br>ABSD方法是一个<strong>自顶向下，递归细化</strong>的方法。<br>软件系统的体系结构通过该方法得到细化，直到能产生<strong>软件构件和类</strong>。</p>
+</blockquote>
+<p><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ABSD%E5%85%AD%E4%B8%AA%E6%AD%A5%E9%AA%A4.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="1架构需求"><a href="#1架构需求" class="headerlink" title="1架构需求"></a>1架构需求</h4><p>架构需求：重在掌握标识构件的三步，如下左图。</p>
 <ul>
-<li>自反律：若Y⊆X⊆U，则X→Y为F所逻辑蕴含</li>
-<li>增广律：若X→Y为F所逻辑蕴含，且Z⊆U，则XZ→YZ为F所逻辑蕴含</li>
-<li>传递律：若X→Y和Y→Z为F所逻辑蕴含，则X→Z为F所逻辑蕴含</li>
-<li>合并规律：若X→Y，X→Z，则X→YZ为F所蕴含</li>
-<li>伪传递律：若X→Y，WY→Z，则XW→Z为F所蕴含</li>
-<li>分解规律：若X→Y，Z⊆Y，则X→Z为F所蕴含</li>
+<li>需求获取：体系结构需求一般来自三个方面，分别是**系统的质量目标、系统的商业目标和系统开发 人员的商业目标。</li>
+<li>标识构件：<strong>为系统生成初始逻辑结构</strong>，标识大致的构件。包括图中三个步骤【左侧虚线框】。</li>
+<li>需求评审<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E9%9C%80%E6%B1%82%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
-<h1 id="键与约束"><a href="#键与约束" class="headerlink" title="键与约束"></a>键与约束</h1><ul>
-<li><p>超键：能<strong>唯一标识</strong>此表的属性的组合</p>
-</li>
-<li><p>候选键：超键中<strong>去掉冗余的属性</strong>，剩余的属性就是候选键</p>
-</li>
-<li><p>主键：<strong>任选一个候选键</strong>，即可作为主键</p>
-</li>
-<li><p>外键：<strong>其他表中的主键</strong></p>
-</li>
-<li><p>主属性：<strong>候选键内的属性为主属性</strong>，其他属于非主属性</p>
-</li>
-<li><p>实体完整性约束：即<strong>主键约束，主键不能为空，也不能重复</strong></p>
-</li>
-<li><p>参照完整性约束：即外键约束，<strong>外键必须是其他表中已经存在的主键的值，或者为空</strong></p>
-</li>
-<li><p>用户自定义完整性约束：<strong>自定义表达式约束</strong>，如设定年龄属性的值必须在0到150之间</p>
-</li>
-</ul>
-<h1 id="范式【难】"><a href="#范式【难】" class="headerlink" title="范式【难】"></a>范式【难】</h1><h2 id="第一范式1NF"><a href="#第一范式1NF" class="headerlink" title="第一范式1NF"></a>第一范式1NF</h2><p>关系中<strong>每一个分量必须是一个不可分的数据项</strong>。<br>通俗地说，第一范式就是表中不允许有小表的存在。比如，下表的员工表，就不属于第一范式。<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%91%98%E5%B7%A5%E8%A1%A8.png" srcset="/img/loading.gif" lazyload alt="第一范式-员工表"></p>
-<ul>
-<li>实例：用一个单一的关系模式学生来描述学校的教务系统：学生（学好、学生姓名、系号、系主人姓名、课程号、成绩）</li>
-<li>依赖关系：（学号-&gt;学生姓名，学号-&gt;系号，系号-&gt;系主人姓名，学号-&gt;课程号，（学生，课程号）-&gt;成绩）<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-%E5%AE%9E%E4%BE%8B.png" srcset="/img/loading.gif" lazyload alt="第一范式-实例"></li>
-</ul>
-<h2 id="第二范式2NF"><a href="#第二范式2NF" class="headerlink" title="第二范式2NF"></a>第二范式2NF</h2><p>【消除部分依赖】<br>如果<strong>关系R属于1NF</strong>，且<strong>每一个非主属性完全函数依赖于任何一个候选码</strong>，则R属于2NF。<br>通俗地说，2NF就是在1NF的基础上，表中的<strong>每一个非主属性不会依赖复合主键中的某一个列</strong>。<br>按照定义，上面的学生表就不满足2NF，因为学号不能完全确定课程号和成绩（每个学生可以选多门课）</p>
-<p>将学生表分解为：<br>学生（学号，学生姓名，系编号，系名，系主任）<br>选课（学号，课程号，成绩）<br>每张表均属于2NF<br>【参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Dream_angel_Z/article/details/45175621">数据库（第一范式，第二范式，第三范式）_数据库第一范式-CSDN博客</a>】</p>
-<h2 id="第三范式3NF"><a href="#第三范式3NF" class="headerlink" title="第三范式3NF"></a>第三范式3NF</h2><p>【消除传递依赖】<br>在<strong>满足1NF的基础上，表中不存在非主属性对码的传递依赖</strong><br>学生关系模型就不属于3NF，因为学生无法直接决定系主任和系名，是由学号-&gt;系编号，再由系编号-&gt;系主任，系编号-&gt;系名，因此存在非主属性对主属性的传递依赖</p>
-<p>进一步分解为<br>学生（学号，学生姓名，系编号）<br>系（系编号，系名，系主任）<br>选课（学号，课程号，成绩）<br>每张表均属于3NF</p>
-<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>【消除主属性部分传递和传递依赖】<br>BC模式可以理解为3NF的优化，修正的3NF。<br>指<strong>在第三范式的基础上，进一步消除主属性对于码的部分函数传递和传递依赖</strong><br>通俗地说，就是<strong>在每一种情况下，每一个依赖的左边决定因素都必然包含候选键</strong>，如下：<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/BC%E8%8C%83%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="BC范式">【参考：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2089714">第一范式、第二范式、第三范式、BCNF范式详解-腾讯云开发者社区-腾讯云</a>】<br>【参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wv4y1m7J2?spm_id_from=333.788.videopod.sections&vd_source=bbf7b29e72c0e9767fcb7d2bcf904c64">数据库第6章 关系数据理论（第二部分：范式理论 1NF-2NF-3NF）_哔哩哔哩_bilibili</a>】</p>
-<h1 id="模式分解【难】"><a href="#模式分解【难】" class="headerlink" title="模式分解【难】"></a>模式分解【难】</h1><p>范式之间的转换一般都通过拆分属性，即<strong>模式分解</strong>，将具有部分函数依赖和传递依赖的属性分离出来，一般以下两种：</p>
-<ul>
-<li>保持函数依赖分解<br>  对于关系模式R，有依赖集F，若对R进行分解，<strong>分解出来的多个关系模式，保持原来的依赖集不变</strong>，则为保持函数依赖分解。另外，注意要消除掉冗余依赖（如传递依赖）<br>  实例：R(A,B,C),F(A-&gt;B,B-&gt;C,A-&gt;C)，将其分解为两个关系模式R1(A,B)和R2(B,C)，此时R1保持依赖A-&gt;B，R2包吃依赖B-&gt;C，说明分解后的R1和R2包吃函数依赖分解，因为A-&gt;C这个函数以来实际是一个冗余依赖，可以由前两个传递得到，所以需不要管。</li>
-<li>无损分解：分解后的关系模式能够还原出原关系模式。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%A8%A1%E5%BC%8F%E5%88%86%E8%A7%A3-%E6%97%A0%E6%8D%9F%E5%88%86%E8%A7%A3.png" srcset="/img/loading.gif" lazyload alt="模式分解-无损分解"><br>  【？需要学习视频】</li>
-</ul>
-<h1 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h1><ul>
-<li>事务：由一系列操作组成，这些操作，要么全做，要么全不做，拥有四种特性：<ul>
-<li>（操作）<strong>原子性</strong>：要么全做，要么全不做</li>
-<li>（数据）<strong>一致性</strong>：事务发生后数据是一致的，例如银行转账，不会存在A账户转出，B账户没收到的情况</li>
-<li>（执行）<strong>隔离性</strong>：任一事务的更新操作知道其成功提交的整个过程对其他事物都是不可见的，不同事务之间是隔离的，互不干涉</li>
-<li>（改变）<strong>持续性</strong>：事务操作的结果是持续性的</li>
-</ul>
-</li>
-</ul>
-<p>事务是并发控制的前提条件，并发控制就是<strong>控制不同的事务并发执行</strong>，提高系统效率，但是并发控制中存在下面三个问题：</p>
-<ul>
-<li><strong>丢失更新</strong>：事务1对数据A进行了修改并写回，事务2也对A进行了修改并写回，此时事务2写回的数据会覆盖事务1写回的数据，就丢失了事务1对A的更新。即数据A的更新会被覆盖</li>
-<li><strong>不可重复读</strong>：事务2读A，而后事务1对数据A进行了修改并写回，此时若事务2再读A，发现数据不对。即一个事务重复读A两次，会发现数据A有误。</li>
-<li><strong>读脏数据</strong>：事务1对数据A进行了修改后，事务2读数据A，而后事务1回滚，数据A恢复了原来的值，那么事务2对数据A的事是无效的，读到了脏数据<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6.png" srcset="/img/loading.gif" lazyload alt="并发控制"></li>
-</ul>
-<h1 id="封锁协议"><a href="#封锁协议" class="headerlink" title="封锁协议"></a>封锁协议</h1><ul>
-<li><strong>X锁是排它锁（写锁）</strong>。若事务T对数据对象A加上X锁，则只允许T读取和修改A，<strong>其他事务都不能再对A加任何类型的锁</strong>，直到T释放A上的锁</li>
-<li><strong>S锁是共享锁（读锁）</strong>。若事务T对数据对象A加上S锁，则只允许T读取A，但是不能修改A，<strong>其他事务只能在对A加S锁</strong>（也即能读不能修改），直到T释放A上的S锁。</li>
-</ul>
-<p>共分为三级封锁协议，如下：</p>
-<ul>
-<li>一级封锁协议：事务在<strong>修改数据R之前必须对其加X锁</strong>，直到事务结束才释放。<strong>可解决丢失更新问题</strong>。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%80%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="一级协议封锁"></li>
-<li>二级封锁协议：一级封锁协议的基础上加上事务T在<strong>读数据R之前必须对其加S锁，读完后即可释放S锁</strong>。可<strong>解决丢失更新、读脏数据问题</strong><br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%BA%8C%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="二级协议封锁"></li>
-<li>三级封锁协议：一级封锁协议加上事务T在读取数据R之前必须现对其加S锁，直到<strong>事务结束才释放</strong>。可<strong>解决丢失更新、读脏数据、数据重复读问题</strong>。<br>  <img src="/images/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93/%E4%B8%89%E7%BA%A7%E5%B0%81%E9%94%81%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="三级协议封锁"></li>
-</ul>
+<h4 id="2架构设计"><a href="#2架构设计" class="headerlink" title="2架构设计"></a>2架构设计</h4><p>架构设计：<strong>将需求阶段的标识构件映射成构件</strong>，进行分析，如下右图。【评审可能是组织内部人员】<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="3架构文档化"><a href="#3架构文档化" class="headerlink" title="3架构文档化"></a>3架构文档化</h4><p>架构(体系结构)文档化：主要产出两种文档，即【<strong>架构(体系结构)规格说明】，【测试架构(体系结构)需求的质量设计说明书】</strong>。文档是至关重要的，是所有人员通信的手段，关系开发的成败。</p>
+<h4 id="4架构复审"><a href="#4架构复审" class="headerlink" title="4架构复审"></a>4架构复审</h4><p>架构复审：由<strong>外部人员(独立于开发组织之外的人，如用户代表和领域专家等)参加的复审</strong>，复审架构是否满足需求，质量问题，构件划分合理性等。若复审不过，则返回架构设计阶段进行重新设计、文档化，再复审。</p>
+<h4 id="5架构实现"><a href="#5架构实现" class="headerlink" title="5架构实现"></a>5架构实现</h4><p>架构实现：用<strong>实体来显示出架构。实现构件，构件组装成系统</strong>，如下左图</p>
+<h4 id="6架构演化"><a href="#6架构演化" class="headerlink" title="6架构演化"></a>6架构演化</h4><p>架构演化：对<strong>架构进行改变，按需求增删构件，使架构可复用</strong>，如下右图<br><img src="/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/ABSD%E5%AE%9E%E7%8E%B0-%E6%BC%94%E5%8C%96%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="ABSD实现-演化图"></p>
 
                 
               </div>
@@ -430,8 +382,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>架构-数据库系统2-规范化和并发控制</div>
-      <div>http://060800.xyz/2025/07/22/架构/架构-数据库系统2-规范化和并发控制/</div>
+      <div>架构-架构设计3.1-基于架构的软件开发ABSD</div>
+      <div>http://060800.xyz/2025/08/18/架构/架构-架构设计3.1-基于架构的软件开发ABSD/</div>
     </div>
     <div class="license-meta">
       
@@ -443,7 +395,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月22日</div>
+          <div>2025年8月18日</div>
         </div>
       
       
@@ -475,9 +427,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/22/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F3-%E6%96%B0%E6%8A%80%E6%9C%AF/" title="架构-数据库系统3-新技术">
+                      <a href="/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A14-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" title="架构-架构设计4-软件架构评估">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">架构-数据库系统3-新技术</span>
+                        <span class="hidden-mobile">架构-架构设计4-软件架构评估</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -485,8 +437,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/21/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="架构-数据库系统1-基本概念">
-                        <span class="hidden-mobile">架构-数据库系统1-基本概念</span>
+                      <a href="/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13-%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8&amp;DSSA&amp;ABSD&amp;%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7/" title="架构-架构设计3-架构复用&amp;DSSA&amp;ABSD&amp;质量属性">
+                        <span class="hidden-mobile">架构-架构设计3-架构复用&amp;DSSA&amp;ABSD&amp;质量属性</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
