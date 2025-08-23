@@ -19,12 +19,12 @@
   <meta name="author" content="砖头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概述DSSA-Domain Specific Software ArchitectureDSSA就是专用于一类特定类型的任务(领域)的、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的软件构件的集合。 DSSA就是一个特定的问题领域中支持一组应用的【领域模型】、【参考需求】、【参考架构】等组成的开发基础，其目标就是支持在一个特定领域中多个应用的生成。 垂直域：在一个特定领域中的">
+    <meta name="description" content="概述DSSA-Domain Specific Software ArchitectureDSSA就是专用于一类特定类型的任务(领域)的、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的软件构件的集合。 DSSA就是一个特定的问题领域中支持一组应用的【领域模型】、【参考需求】、【参考架构】等组成的开发基础，其目标就是支持在一个特定领域中多个应用的生成。 【垂直域】：在一个特定领域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="架构-架构设计3.2-特定领域软件架构DSSA">
 <meta property="og:url" content="http://060800.xyz/2025/08/18/%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A13.2-%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84DSSA/index.html">
 <meta property="og:site_name" content="搬砖者">
-<meta property="og:description" content="概述DSSA-Domain Specific Software ArchitectureDSSA就是专用于一类特定类型的任务(领域)的、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的软件构件的集合。 DSSA就是一个特定的问题领域中支持一组应用的【领域模型】、【参考需求】、【参考架构】等组成的开发基础，其目标就是支持在一个特定领域中多个应用的生成。 垂直域：在一个特定领域中的">
+<meta property="og:description" content="概述DSSA-Domain Specific Software ArchitectureDSSA就是专用于一类特定类型的任务(领域)的、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的软件构件的集合。 DSSA就是一个特定的问题领域中支持一组应用的【领域模型】、【参考需求】、【参考架构】等组成的开发基础，其目标就是支持在一个特定领域中多个应用的生成。 【垂直域】：在一个特定领域">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DSSA%E5%9F%BA%E6%9C%AC%E6%B4%BB%E5%8A%A8.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E9%A2%86%E5%9F%9F%E5%8F%82%E4%B8%8E%E4%BA%BA%E5%91%98.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E4%B8%89%E5%B1%82%E6%A8%A1%E5%9E%8B.png">
 <meta property="og:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%BD%AF%E4%BB%B6%E4%BA%A7%E5%93%81%E7%BA%BF.png">
 <meta property="article:published_time" content="2025-08-18T09:45:43.000Z">
-<meta property="article:modified_time" content="2025-08-21T06:31:24.143Z">
+<meta property="article:modified_time" content="2025-08-23T01:37:15.827Z">
 <meta property="article:author" content="砖头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://060800.xyz/images/%E6%9E%B6%E6%9E%84-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DSSA%E5%9F%BA%E6%9C%AC%E6%B4%BB%E5%8A%A8.png">
@@ -317,8 +317,7 @@
                 
                 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>DSSA-Domain Specific Software Architecture<br>DSSA就是<strong>专用于一类特定类型的任务(领域)的</strong>、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的<strong>软件构件的集合</strong>。</p>
 <p>DSSA就是一个<strong>特定的问题领域</strong>中支持一组应用的【领域模型】、【参考需求】、【参考架构】等组成的开发基础，其目标就是<strong>支持在一个特定领域中多个应用的生成</strong>。</p>
-<p>垂直域：在<strong>一个特定领域中的通用的软件架构，是一个完整的架构</strong>。【相同领域，深入】</p>
-<p>水平域：在<strong>多个不同的特定领域之间的相同的部分的小工具</strong>(如购物和教育都有收费系统，收费系统即是水平域)【不同领域，平移】</p>
+<p>【垂直域】：在<strong>一个特定领域中的通用的软件架构，是一个完整的架构</strong>。【相同领域，深入】<br>【水平域】：在<strong>多个不同的特定领域之间的相同的部分的小工具</strong>(如购物和教育都有收费系统，收费系统即是水平域)【不同领域，平移】</p>
 <h1 id="三个基本活动"><a href="#三个基本活动" class="headerlink" title="三个基本活动"></a>三个基本活动</h1><ol>
 <li><strong>领域分析</strong>：这个阶段的主要目标是<strong>获得领域模型(领域需求)</strong>。<strong>识别信息源</strong>，即整个领域工程过程中信息的来源，可能的信息源包括现存系统、技术文献、问题域和系统开发的专家、用户调查和市场分析、领域演化的历史记录等，<strong>在此基础上就可以分析领域中系统的需求，确定哪些需求是领域中的系统广泛共享的，从而建立领域模型</strong>。</li>
 <li><strong>领域设计</strong>：这个阶段的<strong>目标是获得DSSA</strong>。DSSA描述<strong>在领域模型中表示的需求的解决方案</strong>，它不是单个系统的表示，而是能够<strong>适应领域中多个系统的需求的个高层次的设计</strong>。建立了领域模型之后，就可以派生出满足这些被建模的领域需求DSSA。</li>
